@@ -282,9 +282,10 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
+            padding-top: 20px;
         }
         
-        .timeline::after {
+        .timeline::before {
             content: '';
             position: absolute;
             width: 2px;
@@ -293,7 +294,6 @@
             bottom: 0;
             left: 50%;
             margin-left: -1px;
-            opacity: 0.3;
         }
         
         .timeline-item {
@@ -313,14 +313,20 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 16px;
-            height: 16px;
-            right: -8px;
+            width: 12px;
+            height: 12px;
+            right: -46px;
             background-color: var(--primary);
-            border: 2px solid #fff;
-            top: 15px;
+            border: 3px solid #f5f0e8;
+            top: 50%;
+            transform: translateY(-50%);
             border-radius: 50%;
             z-index: 1;
+            transition: all 0.3s;
+        }
+        
+        .timeline-item:hover::after {
+            background-color: #fff;
         }
         
         .timeline-item:nth-child(even) {
@@ -332,14 +338,15 @@
         }
         
         .timeline-item:nth-child(even)::after {
-            left: -8px;
+            left: -46px;
         }
         
         .timeline-content {
             padding: 20px;
-            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: relative;
+            margin-right: 40px;
+            margin-left: 40px;
         }
         
         .timeline-date {
@@ -373,8 +380,8 @@
         }
         
         @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
+            .timeline::before {
+                left: 40px;
             }
             
             .timeline-item {
@@ -388,7 +395,12 @@
             }
             
             .timeline-item::after {
-                left: 23px;
+                left: 34px;
+            }
+            
+            .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
             }
         }
     </style>
@@ -521,11 +533,72 @@
     <section id="contact">
         <div class="section-content">
             <h2>Get in Touch</h2>
-            <div class="contact-form">
-                <input type="email" placeholder="Your email">
-                <textarea rows="4" placeholder="Your message"></textarea>
-                <button type="submit">Send Message</button>
+            <div class="contact-links" style="
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+                margin-top: 2rem;
+            ">
+                <a href="mailto:keerthisurisetty11@gmail.com" style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    text-decoration: none;
+                    color: var(--text);
+                    font-size: 1.1rem;
+                    transition: color 0.3s;
+                ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    keerthisurisetty11@gmail.com
+                </a>
+                
+                <a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank" style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    text-decoration: none;
+                    color: var(--text);
+                    font-size: 1.1rem;
+                    transition: color 0.3s;
+                ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    LinkedIn Profile
+                </a>
+                
+                <a href="https://github.com/keerthisurisetty" target="_blank" style="
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    text-decoration: none;
+                    color: var(--text);
+                    font-size: 1.1rem;
+                    transition: color 0.3s;
+                ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    GitHub Profile
+                </a>
             </div>
+            <style>
+                .contact-links a:hover {
+                    color: var(--primary);
+                }
+                .contact-links svg {
+                    transition: stroke 0.3s;
+                }
+                .contact-links a:hover svg {
+                    stroke: var(--primary);
+                }
+            </style>
         </div>
     </section>
 </body>
