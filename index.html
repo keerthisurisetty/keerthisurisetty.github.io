@@ -47,13 +47,18 @@
         }
 
         .company-logo {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             object-fit: contain;
             float: right;
             border-radius: 4px;
             margin-left: 15px;
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .company-logo:hover {
+            transform: scale(1.1);
         }        .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -272,10 +277,16 @@
         }
 
         .education-logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             object-fit: contain;
             border-radius: 8px;
+            transition: transform 0.3s ease;
+            padding: 10px;
+        }
+        
+        .education-logo:hover {
+            transform: scale(1.05);
         }
 
         .education-details {
@@ -359,7 +370,7 @@
             <h2>Education</h2>
             <div class="education-container">
                 <div class="education-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYCGfDlIVcrM-NvdXFqyD_GhD57JclcZM_sw&usqp=CAU" alt="Clemson University" class="education-logo">
+                    <img src="logos/clemson.png" alt="Clemson University" class="education-logo">
                     <div class="education-details">
                         <div class="education-school">Clemson University</div>
                         <div class="education-degree">Bachelor of Science - BS, Computer Science</div>
@@ -368,7 +379,7 @@
                 </div>
 
                 <div class="education-card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kN_BpVGCIwfdthWlnYGIXDXegxplD0XN5A&usqp=CAU" alt="SCGSSM" class="education-logo">
+                    <img src="logos/gssm.png" alt="SCGSSM" class="education-logo">
                     <div class="education-details">
                         <div class="education-school">South Carolina Governor's School for Science & Mathematics</div>
                         <div class="education-degree">High School Diploma, Computer Science</div>
@@ -679,6 +690,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="logos/webacy.png" alt="Webacy Logo" class="company-logo">
                         <div class="timeline-date">Sep 2024 - Oct 2024</div>
                         <div class="timeline-title">C.S. Cybersecurity Extern</div>
                         <div class="timeline-company">Webacy</div>
