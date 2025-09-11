@@ -374,6 +374,15 @@
             margin: 0 auto;
             overflow: hidden;
             padding: 0 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-projects .project-card {
+            border-top: 4px solid var(--accent);
+        }
+
+        .coursework-projects .project-card {
+            border-top: 4px solid #6c757d;
         }
 
         .projects-carousel {
@@ -720,7 +729,9 @@
     <section id="projects">
         <div class="section-container">
             <h2>Projects</h2>
-            <div class="projects-container">
+            
+            <h3 style="font-size: 1.8rem; margin: 2rem 0 1rem; color: var(--text);">Featured Projects</h3>
+            <div class="projects-container featured-projects">
                 <button class="carousel-button prev">‹</button>
                 <button class="carousel-button next">›</button>
                 <div class="projects-carousel">
@@ -742,6 +753,29 @@
                             <span class="skill-tag">Pandas</span>
                         </div>
                     </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🏫 C.L.E.V.R. — Clemson Learning Experience Virtual Reality (Concept Pitch)</h3>
+                        <p class="project-period">Mar 2025</p>
+                        <p class="project-org">Deloitte Innovation Challenge</p>
+                        <div class="project-description">
+                            <p>• Conceptualized a technology-driven solution to enhance Clemson’s student experience by improving experiential learning across all majors</p>
+                            <p>• Designed C.L.E.V.R., integrating AI, VR/AR, IoT, and cognitive linguistics for immersive and accessible learning experiences</p>
+                            <p>• Proposed integration with Canvas and other existing platforms for seamless adoption</p>
+                            <p>• Addressed accessibility, data privacy, and cybersecurity considerations in the design</p>
+                            <p>• Defined success metrics and a strategic implementation roadmap for long-term feasibility</p>
+                        <p>• Presented the concept to Clemson alumni and Deloitte practitioners, emphasizing creativity, practicality, and potential impact</p>
+                        </div>
+                    <div class="project-skills">
+                        <span class="skill-tag">AI</span>
+                        <span class="skill-tag">VR/AR</span>
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Cognitive Linguistics</span>
+                        <span class="skill-tag">EdTech Design</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                        <span class="skill-tag">Presentation</span>
+                    </div>
+                </div>
 
                     <div class="project-card">
                         <h3 class="project-title">🍽 TigerChow</h3>
@@ -951,81 +985,93 @@
         });
 
         // Projects carousel functionality
-        const carousel = document.querySelector('.projects-carousel');
-        const cards = document.querySelectorAll('.project-card');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const nextButton = document.querySelector('.carousel-button.next');
-        let currentIndex = 0;
-        let autoplayInterval;
+        function initializeCarousel(containerClass) {
+            const container = document.querySelector(`.${containerClass}`);
+            const carousel = container.querySelector('.projects-carousel');
+            const cards = carousel.querySelectorAll('.project-card');
+            const prevButton = container.querySelector('.carousel-button.prev');
+            const nextButton = container.querySelector('.carousel-button.next');
+            let currentIndex = 0;
+            let autoplayInterval;
 
-        function updateCarousel() {
-            const offset = -currentIndex * (100 / 3);
-            carousel.style.transform = `translateX(${offset}%)`;
+            function updateCarousel() {
+                const offset = -currentIndex * (100 / 3);
+                carousel.style.transform = `translateX(${offset}%)`;
 
-            // Update active states
-            cards.forEach((card, index) => {
-                if (index >= currentIndex && index < currentIndex + 3) {
-                    card.classList.add('active');
-                } else {
-                    card.classList.remove('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % (cards.length - 2);
-            updateCarousel();
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + (cards.length - 2)) % (cards.length - 2);
-            updateCarousel();
-        }
-
-        // Initialize autoplay
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 3000);
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        // Event listeners
-        prevButton.addEventListener('click', () => {
-            prevSlide();
-            stopAutoplay();
-        });
-
-        nextButton.addEventListener('click', () => {
-            nextSlide();
-            stopAutoplay();
-        });
-
-        carousel.addEventListener('mouseenter', stopAutoplay);
-        carousel.addEventListener('mouseleave', startAutoplay);
-
-        // Initial setup
-        updateCarousel();
-        startAutoplay();
-
-        // Handle responsive layout
-        function updateCarouselResponsive() {
-            const width = window.innerWidth;
-            if (width <= 768) {
-                // Mobile: show one card
-                cards.forEach(card => card.style.flex = '0 0 calc(100% - 1rem)');
-            } else if (width <= 1024) {
-                // Tablet: show two cards
-                cards.forEach(card => card.style.flex = '0 0 calc(50% - 1rem)');
-            } else {
-                // Desktop: show three cards
-                cards.forEach(card => card.style.flex = '0 0 calc(33.333% - 1.33rem)');
+                // Update active states
+                cards.forEach((card, index) => {
+                    if (index >= currentIndex && index < currentIndex + 3) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
             }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % (cards.length - 2);
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + (cards.length - 2)) % (cards.length - 2);
+                updateCarousel();
+            }
+
+            // Initialize autoplay
+            function startAutoplay() {
+                autoplayInterval = setInterval(nextSlide, 3000);
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Event listeners
+            prevButton.addEventListener('click', () => {
+                prevSlide();
+                stopAutoplay();
+            });
+
+            nextButton.addEventListener('click', () => {
+                nextSlide();
+                stopAutoplay();
+            });
+
+            carousel.addEventListener('mouseenter', stopAutoplay);
+            carousel.addEventListener('mouseleave', startAutoplay);
+
+            // Initial setup
+            updateCarousel();
+            startAutoplay();
+
+            // Handle responsive layout
+            function updateCarouselResponsive() {
+                const width = window.innerWidth;
+                if (width <= 768) {
+                    // Mobile: show one card
+                    cards.forEach(card => card.style.flex = '0 0 calc(100% - 1rem)');
+                } else if (width <= 1024) {
+                    // Tablet: show two cards
+                    cards.forEach(card => card.style.flex = '0 0 calc(50% - 1rem)');
+                } else {
+                    // Desktop: show three cards
+                    cards.forEach(card => card.style.flex = '0 0 calc(33.333% - 1.33rem)');
+                }
+            }
+
+            updateCarouselResponsive();
         }
 
-        window.addEventListener('resize', updateCarouselResponsive);
-        updateCarouselResponsive();
+        // Initialize both carousels
+        initializeCarousel('featured-projects');
+        initializeCarousel('coursework-projects');
+
+        // Handle responsive layout for all carousels
+        window.addEventListener('resize', () => {
+            initializeCarousel('featured-projects');
+            initializeCarousel('coursework-projects');
+        });
     </script>
 </body>
 </html>
