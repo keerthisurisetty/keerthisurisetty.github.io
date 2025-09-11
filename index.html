@@ -55,18 +55,24 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            transition: color 0.3s;
+            background: #fff;
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .nav-links a:hover {
-            color: var(--hover);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
         }
 
         section {
@@ -77,13 +83,21 @@
             justify-content: center;
         }
 
+        section:nth-of-type(odd) {
+            background: #f5f0e8; /* beige */
+        }
+
+        section:nth-of-type(even) {
+            background: #faf7f2; /* light beige */
+        }
+
         .section-content {
             max-width: 1200px;
             width: 100%;
         }
 
         .hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
         }
 
         .hero-content {
@@ -207,8 +221,9 @@
             <a href="#home" class="logo">KS</a>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#education">Education</a>
                 <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
+                <a href="#experience">Experiences</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -227,6 +242,19 @@
         <div class="section-content">
             <h2>About Me</h2>
             <p>A passionate technologist with expertise in product management, design, and web development. I believe in creating solutions that are both beautiful and functional.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-content">
+            <h2>Education</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p>The University of Texas at Dallas</p>
+                    <p>2021 - 2025</p>
+                </div>
+            </div>
         </div>
     </section>
 
