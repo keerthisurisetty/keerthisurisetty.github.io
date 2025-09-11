@@ -42,183 +42,150 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Primary - Blazing fast brand sprints for startups</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        font-family: 'Inter', Arial, sans-serif;
-        background: #fff;
-        color: #222;
-      }
-      .menu-bar {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        background: rgba(255,255,255,0.97);
-        box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 32px;
-        height: 64px;
-      }
-      .menu {
-        display: flex;
-        gap: 36px;
-      }
-      .menu a {
-        text-decoration: none;
-        color: #222;
-        font-weight: 500;
-        font-size: 1.08rem;
-        padding: 8px 0;
-        border-bottom: 2px solid transparent;
-        transition: border-color 0.2s, color 0.2s;
-      }
-      .menu a:hover {
-        color: #ff4fa2;
-        border-bottom: 2px solid #ff4fa2;
-      }
-      .section {
-        max-width: 900px;
-        margin: 80px auto 0 auto;
-        padding: 0 24px;
-      }
-      .section-title {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 32px;
-        text-align: left;
-      }
-      .section-content {
-        font-size: 1.08rem;
-        color: #444;
-        margin-bottom: 32px;
-      }
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 32px;
-      }
-      .project-card {
-        background: #fafafa;
-        border-radius: 18px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        padding: 32px 24px;
-        position: relative;
-        transition: box-shadow 0.2s, transform 0.2s;
-        cursor: pointer;
-        min-height: 120px;
-        overflow: hidden;
-      }
-      .project-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #222;
-        margin-bottom: 0;
-      }
-      .project-desc {
-        opacity: 0;
-        pointer-events: none;
-        position: absolute;
-        left: 0; right: 0; bottom: 0; top: 0;
-        background: rgba(255,255,255,0.97);
-        color: #444;
-        font-size: 1rem;
-        font-weight: 400;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        border-radius: 18px;
-        transition: opacity 0.2s;
-      }
-      .project-card:hover {
-        box-shadow: 0 6px 24px rgba(255,79,162,0.10);
-        transform: translateY(-2px) scale(1.03);
-      }
-      .project-card:hover .project-desc {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      @media (max-width: 900px) {
-        .section-title { font-size: 1.3rem; }
-        .section { margin-top: 40px; }
-        .projects-grid { gap: 16px; }
-      }
-      @media (max-width: 600px) {
-        .menu-bar { height: auto; padding: 12px; }
-        .menu { gap: 16px; }
-        .section-title { font-size: 1.1rem; }
-        .section { margin-top: 24px; }
-      }
-    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      background: #f7f2ee;
+      color: #222;
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+    .sidebar {
+      width: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 0 40px 0;
+      border-right: 1px solid #e5ded7;
+    }
+    .sidebar-links {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      color: #888;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .sidebar-date {
+      font-size: 0.8rem;
+      color: #aaa;
+      writing-mode: vertical-rl;
+      margin-top: 24px;
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 0 0 80px;
+    }
+    .info-block {
+      min-width: 260px;
+      margin-right: 48px;
+    }
+    .info-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .info-role {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .info-desc {
+      font-size: 0.98rem;
+      color: #666;
+    }
+    .big-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-left: 40px;
+    }
+    .big-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 5vw;
+      font-weight: 700;
+      color: #222;
+      line-height: 1;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .big-link:hover {
+      color: #bfae9e;
+    }
+    @media (max-width: 900px) {
+      .container { flex-direction: column; }
+      .sidebar { flex-direction: row; width: 100%; height: 80px; border-right: none; border-bottom: 1px solid #e5ded7; padding: 0 24px; }
+      .sidebar-links, .sidebar-date { writing-mode: horizontal-tb; margin: 0; }
+      .main { flex-direction: column; align-items: flex-start; padding: 24px; }
+      .info-block { margin-right: 0; margin-bottom: 32px; }
+      .big-links { margin-left: 0; }
+      .big-link { font-size: 8vw; }
+    }
+    @media (max-width: 600px) {
+      .main { padding: 12px; }
+      .info-block { min-width: 0; }
+      .big-link { font-size: 12vw; }
+    }
+  </style>
       </head>
       <body>
-    <div class="menu-bar">
-      <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-links">
+        DR<br>TW<br>LI
+      </div>
+      <div class="sidebar-date">
+        09/2025
+      </div>
+    </aside>
+    <main class="main">
+      <div class="info-block">
+        <div class="info-title">Hi, I'm Keerthi Surisetty</div>
+        <div class="info-role">Product Manager. Designer. Web Developer.</div>
+        <div class="info-desc">Creating beautiful and engaging digital experiences in Dallas, TX.</div>
+      </div>
+      <nav class="big-links">
+        <a class="big-link" href="#work">WORK</a>
+        <a class="big-link" href="#about">ABOUT</a>
+        <a class="big-link" href="#contact">CONTACT</a>
       </nav>
+    </main>
+  </div>
+
+  <section id="work" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
+    <div style="max-width: 600px;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">Work</h2>
+      <p style="font-size: 1.1rem; color: #444;">Showcase your projects, roles, and achievements here. Add interactive cards or details as needed.</p>
     </div>
-    <div class="section" id="about">
-      <div class="section-title">About</div>
-      <div class="section-content">
-        Hi, I'm Keerthi Surisetty. Welcome to my minimalist portfolio website. Scroll to explore my background, skills, experiences, and projects.
-      </div>
+  </section>
+  <section id="about" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
+    <div style="max-width: 600px;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">About</h2>
+      <p style="font-size: 1.1rem; color: #444;">A brief introduction about yourself, your background, and your interests.</p>
     </div>
-    <div class="section" id="education">
-      <div class="section-title">Education</div>
-      <div class="section-content">
-        <!-- Add your education details here -->
-        Bachelor of Science in Computer Science, Example University (2021 - 2025)
-      </div>
+  </section>
+  <section id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
+    <div style="max-width: 600px;">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">Contact</h2>
+      <p style="font-size: 1.1rem; color: #444;">Email: keerthisurisetty11@gmail.com<br>LinkedIn: <a href="https://linkedin.com/in/keerthi-surisetty/" target="_blank">keerthi-surisetty</a><br>GitHub: <a href="https://github.com/keerthisurisetty" target="_blank">keerthisurisetty</a></p>
     </div>
-    <div class="section" id="skills">
-      <div class="section-title">Skills</div>
-      <div class="section-content">
-        HTML, CSS, JavaScript, Python, React, Git, Figma
-      </div>
-    </div>
-    <div class="section" id="experiences">
-      <div class="section-title">Experiences</div>
-      <div class="section-content">
-        <!-- Add your experiences here -->
-        Software Engineering Intern, Example Company (Summer 2024)
-      </div>
-    </div>
-    <div class="section" id="projects">
-      <div class="section-title">Projects</div>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-title">Personal Portfolio Website</div>
-          <div class="project-desc">A responsive portfolio site built with HTML, CSS, and JavaScript. Showcases my work, skills, and contact info.</div>
-        </div>
-        <div class="project-card">
-          <div class="project-title">Brand Sprint App</div>
-          <div class="project-desc">A web app for running fast brand sprints for startups. Features collaborative tools and real-time feedback.</div>
-        </div>
-        <div class="project-card">
-          <div class="project-title">Lovable.dev</div>
-          <div class="project-desc">A creative platform to help users design and launch digital products with ease and delight.</div>
-        </div>
-      </div>
-    </div>
-    <div class="section" id="contact">
-      <div class="section-title">Contact</div>
-      <div class="section-content">
-        Email: keerthisurisetty11@gmail.com<br>
-        LinkedIn: <a href="https://linkedin.com/in/keerthi-surisetty/" target="_blank">keerthi-surisetty</a><br>
-        GitHub: <a href="https://github.com/keerthisurisetty" target="_blank">keerthisurisetty</a>
-      </div>
-    </div>
+  </section>
       </body>
       </html>
         <li>Enhanced a core internal service on the iOS Container Team, streamlining workflows for hundreds of iOS developers.</li>
