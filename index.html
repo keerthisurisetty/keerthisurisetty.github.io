@@ -277,15 +277,231 @@
         </div>
     </section>
 
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            opacity: 0.3;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: var(--primary);
+            border: 2px solid #fff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -8px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-company {
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-location {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-description {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 23px;
+            }
+        }
+    </style>
+
     <section id="experience">
         <div class="section-content">
             <h2>Experience</h2>
-            <div class="experience-timeline">
-                <!-- Add your experience details here -->
-                <p>Coming soon...</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2025 - Present</div>
+                        <div class="timeline-title">Data Engineering Intern</div>
+                        <div class="timeline-company">Clemson University</div>
+                        <div class="timeline-location">Clemson University, South Carolina · On-site</div>
+                        <div class="timeline-description">Clemson Energy Visualization Analytics Center - Data Engineering Intern</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2025 - Present</div>
+                        <div class="timeline-title">Software Engineer Intern</div>
+                        <div class="timeline-company">Capgemini</div>
+                        <div class="timeline-description">School of Computing Senior Capstone Project: Developing A.I. agents</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2025 - Present</div>
+                        <div class="timeline-title">President</div>
+                        <div class="timeline-company">Girls Who Code</div>
+                        <div class="timeline-location">Clemson University, South Carolina</div>
+                        <div class="timeline-description">Coordinate bi-weekly meetings with recruiter sessions, organize hackathons, interviews, and networking prep events</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2025 - Aug 2025</div>
+                        <div class="timeline-title">Software Development Intern</div>
+                        <div class="timeline-company">Citi</div>
+                        <div class="timeline-location">Irving, Texas, United States</div>
+                        <div class="timeline-description">iOS Container Team</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Feb 2025 - May 2025</div>
+                        <div class="timeline-title">Student Software Engineer Intern</div>
+                        <div class="timeline-company">Naval Information Warfare Center Atlantic</div>
+                        <div class="timeline-description">Developed an AI-powered adaptive learning platform with an interactive frontend and AWS-integrated backend</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2024 - May 2025</div>
+                        <div class="timeline-title">Student Support Center Consultant</div>
+                        <div class="timeline-company">Clemson University</div>
+                        <div class="timeline-location">Clemson University, South Carolina · Hybrid</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2024 - Dec 2024</div>
+                        <div class="timeline-title">Student Research Assistant</div>
+                        <div class="timeline-company">Clemson University College of Engineering</div>
+                        <div class="timeline-location">Clemson University, South Carolina</div>
+                        <div class="timeline-description">Conducted research in simulation-based AI laboratory, focusing on integrating AI and ML into robotics. Specialized in AI-driven object detection for autonomous vehicles.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sep 2024 - Oct 2024</div>
+                        <div class="timeline-title">C.S. Cybersecurity Extern</div>
+                        <div class="timeline-company">Webacy</div>
+                        <div class="timeline-description">Gained hands-on experience in Web 3.0 cybersecurity, focusing on blockchain technologies and NFT asset protection. Conducted research on Web3 security trends.</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2022 - Jul 2022</div>
+                        <div class="timeline-title">Student Researcher</div>
+                        <div class="timeline-company">University of South Carolina</div>
+                        <div class="timeline-location">Columbia, South Carolina</div>
+                        <div class="timeline-description">Conducted public health research in Dr. Eric Vejerano's lab, analyzing mask effectiveness during COVID-19. Presented findings at USC and SCGSSM Colloquium.</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Animate timeline items when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.timeline-item').forEach((item) => {
+            observer.observe(item);
+        });
+    </script>
 
     <section id="projects">
         <div class="section-content">
