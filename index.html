@@ -163,6 +163,156 @@
             opacity: 0.8;
         }
 
+        /* Experience Timeline */
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 2px solid var(--accent);
+            top: 50%;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            padding-right: 40px;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 40px;
+        }
+
+        .timeline-item.left::after {
+            right: -8px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item.right::after {
+            left: -8px;
+            transform: translateY(-50%);
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item.left .timeline-content::after {
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+            right: -10px;
+        }
+
+        .timeline-item.right .timeline-content::after {
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+            left: -10px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-company {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            color: var(--text);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-container::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+
+            .timeline-item.right {
+                left: 0;
+            }
+
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 23px;
+            }
+
+            .timeline-item.left .timeline-content::after {
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+                right: auto;
+                left: -10px;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -275,7 +425,19 @@
     <section id="experience">
         <div class="section-container">
             <h2>Experience</h2>
-            <!-- Content will be added later -->
+            <div class="timeline-container">
+                <!-- Timeline items will be added here -->
+                <!-- Example structure for each item (will be replaced with your experiences):
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Date Period</div>
+                        <h3 class="timeline-title">Position Title</h3>
+                        <div class="timeline-company">Company Name</div>
+                        <p class="timeline-description">Description of responsibilities and achievements</p>
+                    </div>
+                </div>
+                -->
+            </div>
         </div>
     </section>
 
