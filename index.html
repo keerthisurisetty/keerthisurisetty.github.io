@@ -244,14 +244,67 @@
         </div>
     </section>
 
+        <style>
+        .education-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .education-details {
+            flex: 1;
+        }
+
+        .education-school {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .education-degree {
+            font-size: 1.1rem;
+            color: #34495e;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .education-date {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+
     <section id="education">
         <div class="section-content">
             <h2>Education</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Bachelor of Science in Computer Science Minor: Artificial Intelligence</h3>
-                    <p>Clemson University</p>
-                    <p>2023 - Present</p>
+            <div class="education-card">
+                <img src="https://brand.clemson.edu/wp-content/uploads/2019/08/Primary_2color-a.png" alt="Clemson University" class="education-logo">
+                <div class="education-details">
+                    <div class="education-school">Clemson University</div>
+                    <div class="education-degree">Bachelor of Science - BS, Computer Science</div>
+                    <div class="education-date">Aug 2023 - May 2027</div>
                 </div>
             </div>
         </div>
@@ -282,7 +335,7 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-            padding-top: 20px;
+            padding: 40px 0;
         }
         
         .timeline::before {
@@ -293,16 +346,16 @@
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -1px;
+            transform: translateX(-50%);
         }
         
         .timeline-item {
-            padding: 10px 40px;
+            margin-bottom: 60px;
             position: relative;
             width: 50%;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.5s;
+            transition: all 0.5s ease;
         }
         
         .timeline-item.visible {
@@ -313,40 +366,85 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
-            right: -46px;
+            width: 16px;
+            height: 16px;
+            right: -8px;
             background-color: var(--primary);
-            border: 3px solid #f5f0e8;
-            top: 50%;
-            transform: translateY(-50%);
+            border: 3px solid #fff;
+            top: 20px;
             border-radius: 50%;
-            z-index: 1;
-            transition: all 0.3s;
+            z-index: 2;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
         }
         
         .timeline-item:hover::after {
             background-color: #fff;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
+            border-color: var(--primary);
+            transform: scale(1.2);
         }
         
         .timeline-item:nth-child(odd) {
+            padding-right: 50px;
             left: 0;
         }
         
+        .timeline-item:nth-child(even) {
+            padding-left: 50px;
+            left: 50%;
+        }
+        
         .timeline-item:nth-child(even)::after {
-            left: -46px;
+            left: -8px;
+            right: auto;
         }
         
         .timeline-content {
-            padding: 20px;
+            padding: 25px;
+            background: white;
             border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             position: relative;
-            margin-right: 40px;
-            margin-left: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-company {
+            font-size: 1rem;
+            color: #34495e;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        
+        .timeline-location {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #34495e;
         }
         
         .timeline-date {
@@ -381,13 +479,13 @@
         
         @media screen and (max-width: 768px) {
             .timeline::before {
-                left: 40px;
+                left: 30px;
             }
             
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+                padding: 0 0 0 70px !important;
+                margin-bottom: 40px;
             }
             
             .timeline-item:nth-child(even) {
@@ -395,12 +493,24 @@
             }
             
             .timeline-item::after {
-                left: 34px;
+                left: 22px;
+                top: 20px;
             }
             
             .timeline-content {
-                margin-left: 0;
-                margin-right: 0;
+                padding: 20px;
+            }
+            
+            .timeline-title {
+                font-size: 1rem;
+            }
+            
+            .timeline-company {
+                font-size: 0.95rem;
+            }
+            
+            .timeline-description {
+                font-size: 0.9rem;
             }
         }
     </style>
