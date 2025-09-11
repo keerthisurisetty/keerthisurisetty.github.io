@@ -42,201 +42,183 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Primary - Blazing fast brand sprints for startups</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-      <style>
-        body {
-          margin: 0;
-          font-family: 'Inter', Arial, sans-serif;
-          background: #fff;
-          color: #222;
-        }
-        .menu-bar {
-          position: sticky;
-          top: 0;
-          width: 100%;
-          background: rgba(255,255,255,0.95);
-          box-shadow: 0 1px 8px rgba(0,0,0,0.04);
-          z-index: 100;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 32px;
-          height: 64px;
-        }
-        .menu {
-          display: flex;
-          gap: 36px;
-        }
-        .menu a {
-          text-decoration: none;
-          color: #222;
-          font-weight: 500;
-          font-size: 1.08rem;
-          padding: 8px 0;
-          border-bottom: 2px solid transparent;
-          transition: border-color 0.2s, color 0.2s;
-        }
-        .menu a:hover {
-          color: #ff4fa2;
-          border-bottom: 2px solid #ff4fa2;
-        }
-        .headline {
-          font-size: 2.8rem;
-          font-weight: 700;
-          margin: 80px 0 0 0;
-          text-align: center;
-          letter-spacing: -2px;
-        }
-        .hero {
-          position: relative;
-          margin: 48px auto 0 auto;
-          max-width: 900px;
-          height: 320px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          border-radius: 32px;
-        }
-        .hero-bg {
-          position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: linear-gradient(90deg, #f7b2ff 0%, #ff6a6a 50%, #ffb86c 100%);
-          z-index: 1;
-        }
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          text-align: left;
-          margin-left: 48px;
-        }
-        .hero-title {
-          font-size: 2.2rem;
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 0;
-          line-height: 1.1;
-        }
-        .hero-shape {
-          position: absolute;
-          right: 48px;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 3;
-        }
-        .section {
-          max-width: 900px;
-          margin: 64px auto 0 auto;
-          padding: 0 24px;
-        }
-        .section-title {
-          font-size: 2rem;
-          font-weight: 700;
-          margin-bottom: 32px;
-          text-align: left;
-        }
-        .projects-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-          gap: 32px;
-        }
-        .project-card {
-          background: #fafafa;
-          border-radius: 18px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-          padding: 32px 24px;
-          position: relative;
-          transition: box-shadow 0.2s, transform 0.2s;
-          cursor: pointer;
-          min-height: 120px;
-          overflow: hidden;
-        }
-        .project-title {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #222;
-          margin-bottom: 0;
-        }
-        .project-desc {
-          opacity: 0;
-          pointer-events: none;
-          position: absolute;
-          left: 0; right: 0; bottom: 0; top: 0;
-          background: rgba(255,255,255,0.97);
-          color: #444;
-          font-size: 1rem;
-          font-weight: 400;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 24px;
-          border-radius: 18px;
-          transition: opacity 0.2s;
-        }
-        .project-card:hover {
-          box-shadow: 0 6px 24px rgba(255,79,162,0.10);
-          transform: translateY(-2px) scale(1.03);
-        }
-        .project-card:hover .project-desc {
-          opacity: 1;
-          pointer-events: auto;
-        }
-        @media (max-width: 900px) {
-          .headline { font-size: 2rem; }
-          .hero { height: 200px; }
-          .hero-content { margin-left: 12px; }
-          .hero-shape { right: 12px; }
-        }
-        @media (max-width: 600px) {
-          .menu-bar { height: auto; padding: 12px; }
-          .menu { gap: 16px; }
-          .headline { font-size: 1.2rem; margin-top: 32px; }
-          .hero { height: 120px; border-radius: 16px; }
-          .section-title { font-size: 1.2rem; }
-          .projects-grid { gap: 16px; }
-        }
-      </style>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: 'Inter', Arial, sans-serif;
+        background: #fff;
+        color: #222;
+      }
+      .menu-bar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.97);
+        box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 32px;
+        height: 64px;
+      }
+      .menu {
+        display: flex;
+        gap: 36px;
+      }
+      .menu a {
+        text-decoration: none;
+        color: #222;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 8px 0;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .menu a:hover {
+        color: #ff4fa2;
+        border-bottom: 2px solid #ff4fa2;
+      }
+      .section {
+        max-width: 900px;
+        margin: 80px auto 0 auto;
+        padding: 0 24px;
+      }
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 32px;
+        text-align: left;
+      }
+      .section-content {
+        font-size: 1.08rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 32px;
+      }
+      .project-card {
+        background: #fafafa;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        padding: 32px 24px;
+        position: relative;
+        transition: box-shadow 0.2s, transform 0.2s;
+        cursor: pointer;
+        min-height: 120px;
+        overflow: hidden;
+      }
+      .project-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 0;
+      }
+      .project-desc {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        left: 0; right: 0; bottom: 0; top: 0;
+        background: rgba(255,255,255,0.97);
+        color: #444;
+        font-size: 1rem;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        border-radius: 18px;
+        transition: opacity 0.2s;
+      }
+      .project-card:hover {
+        box-shadow: 0 6px 24px rgba(255,79,162,0.10);
+        transform: translateY(-2px) scale(1.03);
+      }
+      .project-card:hover .project-desc {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      @media (max-width: 900px) {
+        .section-title { font-size: 1.3rem; }
+        .section { margin-top: 40px; }
+        .projects-grid { gap: 16px; }
+      }
+      @media (max-width: 600px) {
+        .menu-bar { height: auto; padding: 12px; }
+        .menu { gap: 16px; }
+        .section-title { font-size: 1.1rem; }
+        .section { margin-top: 24px; }
+      }
+    </style>
       </head>
       <body>
-      <div class="menu-bar">
-        <nav class="menu">
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#skills">Skills</a>
-          <a href="#experiences">Experiences</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+    <div class="menu-bar">
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="section" id="about">
+      <div class="section-title">About</div>
+      <div class="section-content">
+        Hi, I'm Keerthi Surisetty. Welcome to my minimalist portfolio website. Scroll to explore my background, skills, experiences, and projects.
       </div>
-      <div class="headline">
-        Blazing fast brand sprints for startups
+    </div>
+    <div class="section" id="education">
+      <div class="section-title">Education</div>
+      <div class="section-content">
+        <!-- Add your education details here -->
+        Bachelor of Science in Computer Science, Example University (2021 - 2025)
       </div>
-      <div class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-          <div class="hero-title">Create anything<br>your heart desires</div>
+    </div>
+    <div class="section" id="skills">
+      <div class="section-title">Skills</div>
+      <div class="section-content">
+        HTML, CSS, JavaScript, Python, React, Git, Figma
+      </div>
+    </div>
+    <div class="section" id="experiences">
+      <div class="section-title">Experiences</div>
+      <div class="section-content">
+        <!-- Add your experiences here -->
+        Software Engineering Intern, Example Company (Summer 2024)
+      </div>
+    </div>
+    <div class="section" id="projects">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-title">Personal Portfolio Website</div>
+          <div class="project-desc">A responsive portfolio site built with HTML, CSS, and JavaScript. Showcases my work, skills, and contact info.</div>
         </div>
-        <svg class="hero-shape" width="120" height="120" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M90 20C110 20 120 40 120 60C120 80 160 80 160 100C160 120 120 120 120 140C120 160 110 180 90 180C70 180 60 160 60 140C60 120 20 120 20 100C20 80 60 80 60 60C60 40 70 20 90 20Z" fill="#fff" fill-opacity="0.8"/>
-          <path d="M90 70L100 110L90 100L80 110L90 70Z" fill="#ff4fa2"/>
-        </svg>
-      </div>
-      <div class="section" id="projects">
-        <div class="section-title">Projects</div>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-title">Personal Portfolio Website</div>
-            <div class="project-desc">A responsive portfolio site built with HTML, CSS, and JavaScript. Showcases my work, skills, and contact info.</div>
-          </div>
-          <div class="project-card">
-            <div class="project-title">Brand Sprint App</div>
-            <div class="project-desc">A web app for running fast brand sprints for startups. Features collaborative tools and real-time feedback.</div>
-          </div>
-          <div class="project-card">
-            <div class="project-title">Lovable.dev</div>
-            <div class="project-desc">A creative platform to help users design and launch digital products with ease and delight.</div>
-          </div>
+        <div class="project-card">
+          <div class="project-title">Brand Sprint App</div>
+          <div class="project-desc">A web app for running fast brand sprints for startups. Features collaborative tools and real-time feedback.</div>
+        </div>
+        <div class="project-card">
+          <div class="project-title">Lovable.dev</div>
+          <div class="project-desc">A creative platform to help users design and launch digital products with ease and delight.</div>
         </div>
       </div>
+    </div>
+    <div class="section" id="contact">
+      <div class="section-title">Contact</div>
+      <div class="section-content">
+        Email: keerthisurisetty11@gmail.com<br>
+        LinkedIn: <a href="https://linkedin.com/in/keerthi-surisetty/" target="_blank">keerthi-surisetty</a><br>
+        GitHub: <a href="https://github.com/keerthisurisetty" target="_blank">keerthisurisetty</a>
+      </div>
+    </div>
       </body>
       </html>
         <li>Enhanced a core internal service on the iOS Container Team, streamlining workflows for hundreds of iOS developers.</li>
