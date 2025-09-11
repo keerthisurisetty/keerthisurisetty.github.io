@@ -367,6 +367,133 @@
             height: 24px;
         }
 
+        /* Projects Section */
+        .projects-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 0 4rem;
+        }
+
+        .projects-carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        .project-card {
+            flex: 0 0 calc(33.333% - 1.33rem);
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            transform: scale(0.95);
+        }
+
+        .project-card.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            opacity: 1;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-period {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-org {
+            font-size: 1rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(34, 139, 230, 0.1);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-button:hover {
+            background: var(--text);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .project-card {
+                flex: 0 0 calc(50% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-card {
+                flex: 0 0 calc(100% - 1rem);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -593,7 +720,199 @@
     <section id="projects">
         <div class="section-container">
             <h2>Projects</h2>
-            <!-- Content will be added later -->
+            <div class="projects-container">
+                <button class="carousel-button prev">‹</button>
+                <button class="carousel-button next">›</button>
+                <div class="projects-carousel">
+                    <div class="project-card">
+                        <h3 class="project-title">📊 Stock Price Prediction</h3>
+                        <p class="project-period">Apr 2025 – May 2025</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Built Linear Regression and KNN models to predict stock prices</p>
+                            <p>• Performed EDA on a 1,000-day synthetic dataset</p>
+                            <p>• Found Linear Regression performed best (MSE: 127.68)</p>
+                            <p>• Recommended exploring Neural Networks and Random Forests</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Linear Regression</span>
+                            <span class="skill-tag">KNN</span>
+                            <span class="skill-tag">Data Science</span>
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Pandas</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🍽 TigerChow</h3>
+                        <p class="project-period">Jan 2025 – May 2025</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Developed a web app for campus food ordering</p>
+                            <p>• Designed RESTful APIs with AWS backend</p>
+                            <p>• Applied Agile practices with Trello</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Agile</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🤖 AI Career Chatbot</h3>
+                        <p class="project-period">Dec 2024</p>
+                        <p class="project-org">Independent Project</p>
+                        <div class="project-description">
+                            <p>• Created an AI chatbot for LinkedIn profile analysis</p>
+                            <p>• Built with HTML, CSS, JS frontend and Flask backend</p>
+                            <p>• Integrated LinkedIn APIs and NLP</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">AI</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Full-Stack</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🎮 Checkers (CLI Game)</h3>
+                        <p class="project-period">Aug 2024 – Dec 2024</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Designed CLI-based Checkers with custom rules</p>
+                            <p>• Used GitHub workflows and feature branching</p>
+                            <p>• Implemented JUnit tests and UML diagrams</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🦆 Budget Buddy</h3>
+                        <p class="project-period">Sep 2024</p>
+                        <p class="project-org">HackGT11 Project</p>
+                        <div class="project-description">
+                            <p>• Built a gamified finance tracker</p>
+                            <p>• Developed with HTML, CSS, JavaScript frontend</p>
+                            <p>• Implemented streak-based progress tracking</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🚀 SPARK Challenge</h3>
+                        <p class="project-period">Aug 2023 – Mar 2024</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Two-semester tech + entrepreneurship program</p>
+                            <p>• Created physical prototype using CAD</p>
+                            <p>• Delivered innovation pitches</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">CAD</span>
+                            <span class="skill-tag">3D Printing</span>
+                            <span class="skill-tag">Entrepreneurship</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🔢 T9 Assistant</h3>
+                        <p class="project-period">Nov 2023 – Dec 2023</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Developed C-based T9 conversion program</p>
+                            <p>• Implemented CLI arguments and file I/O</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Problem Solving</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🔐 Ciphers</h3>
+                        <p class="project-period">Oct 2023 – Nov 2023</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Built Caesar Cipher program in C++</p>
+                            <p>• Used linked lists and queues</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">OOP</span>
+                            <span class="skill-tag">Data Structures</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🍕 PizzaWars</h3>
+                        <p class="project-period">Sep 2023 – Oct 2023</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Analyzed dining hall pizza consumption</p>
+                            <p>• Multi-file C++ program implementation</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🎯 Price is Right!</h3>
+                        <p class="project-period">Aug 2023 – Sep 2023</p>
+                        <p class="project-org">Clemson University</p>
+                        <div class="project-description">
+                            <p>• Interactive C++ price estimation game</p>
+                            <p>• Dynamic menu system implementation</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">UI Design</span>
+                            <span class="skill-tag">Critical Thinking</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🖼 Hidden Images</h3>
+                        <p class="project-org">SCGSSM</p>
+                        <div class="project-description">
+                            <p>• Created Python GUI for image steganography</p>
+                            <p>• Implemented image hiding algorithms</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">🔗 Sankey Diagram</h3>
+                        <p class="project-org">SCGSSM</p>
+                        <div class="project-description">
+                            <p>• Designed Python-based flow diagram</p>
+                            <p>• Visualized data movement between domains</p>
+                        </div>
+                        <div class="project-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -630,6 +949,83 @@
                 });
             });
         });
+
+        // Projects carousel functionality
+        const carousel = document.querySelector('.projects-carousel');
+        const cards = document.querySelectorAll('.project-card');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        let currentIndex = 0;
+        let autoplayInterval;
+
+        function updateCarousel() {
+            const offset = -currentIndex * (100 / 3);
+            carousel.style.transform = `translateX(${offset}%)`;
+
+            // Update active states
+            cards.forEach((card, index) => {
+                if (index >= currentIndex && index < currentIndex + 3) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % (cards.length - 2);
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + (cards.length - 2)) % (cards.length - 2);
+            updateCarousel();
+        }
+
+        // Initialize autoplay
+        function startAutoplay() {
+            autoplayInterval = setInterval(nextSlide, 3000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // Event listeners
+        prevButton.addEventListener('click', () => {
+            prevSlide();
+            stopAutoplay();
+        });
+
+        nextButton.addEventListener('click', () => {
+            nextSlide();
+            stopAutoplay();
+        });
+
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+        // Initial setup
+        updateCarousel();
+        startAutoplay();
+
+        // Handle responsive layout
+        function updateCarouselResponsive() {
+            const width = window.innerWidth;
+            if (width <= 768) {
+                // Mobile: show one card
+                cards.forEach(card => card.style.flex = '0 0 calc(100% - 1rem)');
+            } else if (width <= 1024) {
+                // Tablet: show two cards
+                cards.forEach(card => card.style.flex = '0 0 calc(50% - 1rem)');
+            } else {
+                // Desktop: show three cards
+                cards.forEach(card => card.style.flex = '0 0 calc(33.333% - 1.33rem)');
+            }
+        }
+
+        window.addEventListener('resize', updateCarouselResponsive);
+        updateCarouselResponsive();
     </script>
 </body>
 </html>
