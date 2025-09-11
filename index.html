@@ -127,6 +127,46 @@
                 font-size: 2rem;
             }
         }
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: var(--bg-light);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -143,6 +183,13 @@
             </div>
         </div>
     </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi! I'm Keerthi Surisetty!</h1>
+            <p class="hero-subtitle">Turning curiosity and creativity into technology that makes a difference.</p>
+        </div>
+    </section>
 
     <section id="about">
         <div class="section-container">
