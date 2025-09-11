@@ -424,6 +424,13 @@
             box-sizing: border-box;
         }
         
+        .timeline-item::after {
+            background-image: var(--logo-url);
+            background-size: 70%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
         .timeline-item.visible {
             opacity: 1;
             transform: translateY(0);
@@ -432,22 +439,27 @@
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary);
-            border: 2px solid #fff;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 2px solid var(--primary);
             border-radius: 50%;
             z-index: 2;
             transition: all 0.3s ease;
-            box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             top: 50%;
-            margin-top: -6px;
+            margin-top: -25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
         }
         
         .timeline-item:hover::after {
-            background-color: #fff;
-            border-color: var(--primary);
-            transform: scale(1.2);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
         .timeline-item:nth-child(odd) {
@@ -590,9 +602,8 @@
         <div class="section-content">
             <h2>Experience</h2>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/clemson.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Aug 2025 - Present</div>
                         <div class="timeline-title">Data Engineering Intern</div>
                         <div class="timeline-company">Clemson University</div>
@@ -601,9 +612,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/capgemini.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/capgemini.png" alt="Capgemini Logo" class="company-logo">
                         <div class="timeline-date">Aug 2025 - Present</div>
                         <div class="timeline-title">Software Engineer Intern</div>
                         <div class="timeline-company">Capgemini</div>
@@ -611,9 +621,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/gwc.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/gwc.png" alt="Girls Who Code Logo" class="company-logo">
                         <div class="timeline-date">May 2025 - Present</div>
                         <div class="timeline-title">President</div>
                         <div class="timeline-company">Girls Who Code</div>
@@ -622,9 +631,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/citi.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/citi.png" alt="Citi Logo" class="company-logo">
                         <div class="timeline-date">Jun 2025 - Aug 2025</div>
                         <div class="timeline-title">Software Development Intern</div>
                         <div class="timeline-company">Citi</div>
@@ -633,9 +641,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/niwc.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/niwc.png" alt="NIWC Logo" class="company-logo">
                         <div class="timeline-date">Feb 2025 - May 2025</div>
                         <div class="timeline-title">Student Software Engineer Intern</div>
                         <div class="timeline-company">Naval Information Warfare Center Atlantic</div>
@@ -643,9 +650,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/clemson.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Jan 2024 - May 2025</div>
                         <div class="timeline-title">Student Support Center Consultant</div>
                         <div class="timeline-company">Clemson University</div>
@@ -653,9 +659,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/clemson.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Aug 2024 - Dec 2024</div>
                         <div class="timeline-title">Student Research Assistant</div>
                         <div class="timeline-company">Clemson University College of Engineering</div>
@@ -664,9 +669,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/webacy.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/webacy.png" alt="Webacy Logo" class="company-logo">
                         <div class="timeline-date">Sep 2024 - Oct 2024</div>
                         <div class="timeline-title">C.S. Cybersecurity Extern</div>
                         <div class="timeline-company">Webacy</div>
@@ -674,9 +678,8 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" style="--logo-url: url('assets/logos/usc.png')">
                     <div class="timeline-content">
-                        <img src="assets/logos/usc.png" alt="University of South Carolina Logo" class="company-logo">
                         <div class="timeline-date">Jun 2022 - Jul 2022</div>
                         <div class="timeline-title">Student Researcher</div>
                         <div class="timeline-company">University of South Carolina</div>
