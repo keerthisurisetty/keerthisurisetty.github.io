@@ -1,265 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keerthi Surisetty</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #fff7fb;
-      --primary: #e88fb4;
-      --secondary: #6d597a;
-      --card: #ffffff;
-      --muted: #555;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--bg);
-      color: var(--secondary);
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(180deg, #fbe0ec, #fff7fb);
-    }
-    header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      border: 4px solid white;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    header h1 {
-      margin-top: 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keerthi Surisetty | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2a5298;
+            --text: #2c3e50;
+            --background: #f8f9fa;
+            --accent: #e9ecef;
+            --hover: #4a90e2;
+        }
 
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Primary - Blazing fast brand sprints for startups</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      background: #f7f2ee;
-      color: #222;
-      font-family: 'Inter', Arial, sans-serif;
-      min-height: 100vh;
-    }
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
-    .sidebar {
-      width: 120px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 0 40px 0;
-      border-right: 1px solid #e5ded7;
-    }
-    .sidebar-links {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      font-size: 0.9rem;
-      letter-spacing: 2px;
-      color: #888;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    .sidebar-date {
-      font-size: 0.8rem;
-      color: #aaa;
-      writing-mode: vertical-rl;
-      margin-top: 24px;
-    }
-    .main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 0 0 0 80px;
-    }
-    .info-block {
-      min-width: 260px;
-      margin-right: 48px;
-    }
-    .info-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 12px;
-    }
-    .info-role {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 12px;
-    }
-    .info-desc {
-      font-size: 0.98rem;
-      color: #666;
-    }
-    .big-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-left: 40px;
-    }
-    .big-link {
-      font-family: 'Playfair Display', serif;
-      font-size: 5vw;
-      font-weight: 700;
-      color: #222;
-      line-height: 1;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .big-link:hover {
-      color: #bfae9e;
-    }
-    @media (max-width: 900px) {
-      .container { flex-direction: column; }
-      .sidebar { flex-direction: row; width: 100%; height: 80px; border-right: none; border-bottom: 1px solid #e5ded7; padding: 0 24px; }
-      .sidebar-links, .sidebar-date { writing-mode: horizontal-tb; margin: 0; }
-      .main { flex-direction: column; align-items: flex-start; padding: 24px; }
-      .info-block { margin-right: 0; margin-bottom: 32px; }
-      .big-links { margin-left: 0; }
-      .big-link { font-size: 8vw; }
-    }
-    @media (max-width: 600px) {
-      .main { padding: 12px; }
-      .info-block { min-width: 0; }
-      .big-link { font-size: 12vw; }
-    }
-  </style>
-      </head>
-      <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="sidebar-links">
-        DR<br>TW<br>LI
-      </div>
-      <div class="sidebar-date">
-        09/2025
-      </div>
-    </aside>
-    <main class="main">
-      <div class="info-block">
-        <div class="info-title">Hi, I'm Keerthi Surisetty</div>
-        <div class="info-role">Product Manager. Designer. Web Developer.</div>
-        <div class="info-desc">Creating beautiful and engaging digital experiences in Dallas, TX.</div>
-      </div>
-      <nav class="big-links">
-        <a class="big-link" href="#work">WORK</a>
-        <a class="big-link" href="#about">ABOUT</a>
-        <a class="big-link" href="#contact">CONTACT</a>
-      </nav>
-    </main>
-  </div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <section id="work" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
-    <div style="max-width: 600px;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">Work</h2>
-      <p style="font-size: 1.1rem; color: #444;">Showcase your projects, roles, and achievements here. Add interactive cards or details as needed.</p>
-    </div>
-  </section>
-  <section id="about" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
-    <div style="max-width: 600px;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">About</h2>
-      <p style="font-size: 1.1rem; color: #444;">A brief introduction about yourself, your background, and your interests.</p>
-    </div>
-  </section>
-  <section id="contact" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f7f2ee; border-top: 1px solid #e5ded7;">
-    <div style="max-width: 600px;">
-      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: #222;">Contact</h2>
-      <p style="font-size: 1.1rem; color: #444;">Email: keerthisurisetty11@gmail.com<br>LinkedIn: <a href="https://linkedin.com/in/keerthi-surisetty/" target="_blank">keerthi-surisetty</a><br>GitHub: <a href="https://github.com/keerthisurisetty" target="_blank">keerthisurisetty</a></p>
-    </div>
-  </section>
-      </body>
-      </html>
-        <li>Enhanced a core internal service on the iOS Container Team, streamlining workflows for hundreds of iOS developers.</li>
-        <li>Built and maintained CI/CD pipelines using Docker, Red Hat OpenShift, and Harness.</li>
-        <li>Developed features with a Java backend and Angular frontend, ensuring seamless API integration and user experience.</li>
-      </ul>
-    </div>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
 
-    <div class="card">
-      <h3>N.I.W.C. Atlantic — Adaptive Learning Platform</h3>
-      <p class="subtext">Software Engineering Intern · Charleston, SC · Jan 2025 – May 2025</p>
-      <ul>
-        <li>Developed an AI-powered adaptive learning platform with an interactive React.js frontend and AWS-integrated backend.</li>
-      </ul>
-    </div>
-  </section>
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 249, 250, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>JPMorgan Chase & Co. Quantitative Research Virtual Program</h3>
-      <ul>
-        <li>Completed a simulation on quantitative research methods, analyzing a loan portfolio to estimate customer default probabilities.</li>
-        <li>Applied dynamic programming to convert FICO scores into categorical data for improved prediction accuracy.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Stock Price Prediction</h3>
-      <ul>
-        <li>Built predictive models using stock sentiment, volume, and volatility data.</li>
-        <li>Conducted EDA on 1000-day dataset and evaluated models using MSE; Linear Regression outperformed KNN.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>TigerChow</h3>
-      <ul>
-        <li>Developed a web app using AWS-backed REST APIs to streamline food ordering at Clemson’s restaurants.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>AI/ML Y.O.L.O. Object Detection</h3>
-      <ul>
-        <li>Optimized object detection for autonomous vehicles to improve road sign recognition.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>AI Career Chatbot — G.I.T. Hackathon 1st Place</h3>
-      <ul>
-        <li>Built an AI chatbot using LinkedIn APIs to recommend career-aligned courses.</li>
-      </ul>
-    </div>
-  </section>
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
 
-  <section id="leadership">
-    <h2>Leadership & Activities</h2>
-    <div class="card">
-      <ul>
-        <li>College Loops: Girls Who Code (Co-President & Vice President)</li>
-        <li>Clemson Forge (Industry Liaison)</li>
-        <li>Clemson Student Government: Council of Diversity Affairs (Co-Chair of Campus Outreach)</li>
-      </ul>
-    </div>
-  </section>
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="card">
-      <p>Regression modeling, KNN, KMeans, Naive Bayes, ML Models, AI/ML Libraries, Pandas, C/C++, Python, Java, JavaScript, CSS, HTML, SQL, Google Cloud Practitioner, EMACS, VIM, Linux, Postman, AWS, Project Management, Agile, Unix, Git, API, GitHub, MS Office, CAD, 3D Printing, Adobe Creative Cloud, NumPy, PyTorch, Jupyter, Anaconda, Red Hat OpenShift, Lightspeed, Harness, Y.O.L.O.</p>
-    </div>
-  </section>
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
 
-  <footer>
-    © 2025 Keerthi Surisetty — Made with 💕
-  </footer>
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
+        .nav-links a:hover {
+            color: var(--hover);
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--text);
+            font-weight: 300;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 1rem;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: var(--hover);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            section {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">KS</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="section-content hero-content">
+            <h1>Hi, I'm Keerthi Surisetty</h1>
+            <p class="subtitle">Product Manager • Designer • Web Developer</p>
+            <p>Creating beautiful and engaging digital experiences in Dallas, TX.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-content">
+            <h2>About Me</h2>
+            <p>A passionate technologist with expertise in product management, design, and web development. I believe in creating solutions that are both beautiful and functional.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-content">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Product Management</h3>
+                    <p>Agile methodologies, User Stories, Product Strategy, Roadmap Planning</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>UI/UX Design, Wireframing, Prototyping, User Research</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Python, Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-content">
+            <h2>Experience</h2>
+            <div class="experience-timeline">
+                <!-- Add your experience details here -->
+                <p>Coming soon...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p>A minimalist portfolio showcasing my work and skills.</p>
+                    </div>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+            <h2>Get in Touch</h2>
+            <div class="contact-form">
+                <input type="email" placeholder="Your email">
+                <textarea rows="4" placeholder="Your message"></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
