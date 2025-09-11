@@ -4,917 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keerthi Surisetty | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inte    <section id="about">
-        <div class="section-content">
-            <h2>About Me</h2>
-            <div class="about-card">
-                <div class="window-header">
-                    <div class="window-controls">
-                        <div class="window-control"></div>
-                        <div class="window-control"></div>
-                        <div class="window-control"></div>
-                    </div>
-                </div>
-                <div class="about-content">
-                    <p>I'm a Computer Science major in the Clemson University Honors College, minoring in Artificial Intelligence. From software engineering to full-stack development to machine learning, I've loved diving into projects that challenge me to think differently and find creative solutions. I love exploring new opportunities and experiences. Curious, adaptable, and solutions-driven, I'm passionate about building technology that connects ideas and makes a real-world impact.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <style>
-        .about-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .window-header {
-            background: #f8f9fa;
-            padding: 12px 16px;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .about-content {
-            padding: 25px;
-            line-height: 1.8;
-        }
-
-        .about-content p {
-            margin: 0;
-            color: #444;
-            font-size: 1.1rem;
-        }
-    </style>@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2a5298;
-            --text: #2c3e50;
-            --background: #f8f9fa;
-            --accent: #e9ecef;
-            --hover: #4a90e2;
+            /* Modern, muted color palette */
+            --bg-light: #f8f9fa;
+            --bg-dark: #f1f3f5;
+            --text: #343a40;
+            --accent: #228be6;
+            --nav-bg: rgba(255, 255, 255, 0.95);
         }
 
-        html {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
             font-family: 'Inter', sans-serif;
-            background: var(--background);
-            color: var(--text);
             line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-light);
         }
 
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
-            width: 100%;
-            background: rgba(248, 249, 250, 0.95);
+            left: 0;
+            right: 0;
+            background: var(--nav-bg);
             backdrop-filter: blur(10px);
             padding: 1rem 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
-        .nav-content {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
         }
 
-        .company-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            float: right;
-            border-radius: 4px;
-            margin-left: 15px;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .company-logo:hover {
-            transform: scale(1.1);
-        }        .logo {
-            font-family: 'Playfair Display', serif;
+        .logo {
             font-size: 1.5rem;
-            color: var(--primary);
+            font-weight: 600;
+            color: var(--text);
             text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 1rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
-            background: #fff;
-            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
+            color: var(--accent);
+            background: rgba(34, 139, 230, 0.1);
         }
 
+        /* Sections */
         section {
             min-height: 100vh;
-            padding: 6rem 2rem 4rem;
+            padding: 6rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background-color 0.3s ease;
         }
 
-        section:nth-of-type(odd) {
-            background: #f5f0e8; /* beige */
+        section:nth-child(even) {
+            background: var(--bg-dark);
         }
 
-        section:nth-of-type(even) {
-            background: #faf7f2; /* light beige */
+        section:nth-child(odd) {
+            background: var(--bg-light);
         }
 
-        .section-content {
+        .section-container {
             max-width: 1200px;
             width: 100%;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 800px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin: 0;
-            color: var(--primary);
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 1.5rem;
-            max-width: 600px;
             margin: 0 auto;
         }
 
-        input, textarea {
-            padding: 1rem;
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            font-family: 'Inter', sans-serif;
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            font-weight: 600;
         }
 
-        button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background: var(--hover);
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            h1 {
-                font-size: 2.5rem;
+
+            .mobile-menu {
+                display: block;
             }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
             h2 {
                 font-size: 2rem;
-            }
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            section {
-                padding: 4rem 1rem;
             }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="#home" class="logo">KS</a>
+        <div class="nav-container">
+            <a href="#" class="logo">KS</a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
-                <a href="#experience">Experiences</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="section-content hero-content">
-            <h1>Hi, I'm Keerthi Surisetty</h1>
-            <p class="subtitle">Turning curiosity and creativity into technology that makes a difference.</p>
-        </div>
-    </section>
-
     <section id="about">
-        <div class="section-content">
-            <h2>About Me</h2>
-            <p>I’m a Computer Science major in the Clemson University Honors College, minoring in Artificial Intelligence. From software engineering to full-stack development to machine learning, I’ve loved diving into projects that challenge me to think differently and find creative solutions.I love exploring new opportunities and experiences. Curious, adaptable, and solutions-driven, I’m passionate about building technology that connects ideas and makes a real-world impact.</p>
+        <div class="section-container">
+            <h2>About</h2>
+            <!-- Content will be added later -->
         </div>
     </section>
-
-        <style>
-        .education-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            gap: 24px;
-            align-items: flex-start;
-        }
-
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-
-        .education-logo {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            padding: 10px;
-        }
-        
-        .education-logo:hover {
-            transform: scale(1.05);
-        }
-
-        .education-details {
-            flex: 1;
-        }
-
-        .education-school {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-
-        .education-degree {
-            font-size: 1.1rem;
-            color: #34495e;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-
-        .education-date {
-            font-size: 0.9rem;
-            color: var(--primary);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-    </style>
-
-    <style>
-        .education-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .education-card {
-            width: 100%;
-            min-height: 160px;
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
-
-        .education-logo {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            flex-shrink: 0;
-        }
-
-        .education-school {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-
-        @media (max-width: 768px) {
-            .education-card {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            
-            .education-logo {
-                margin-bottom: 16px;
-            }
-        }
-    </style>
 
     <section id="education">
-        <div class="section-content">
+        <div class="section-container">
             <h2>Education</h2>
-            <div class="education-container">
-                <div class="education-card">
-                    <img src="logos/clemson.png" alt="Clemson University" class="education-logo">
-                    <div class="education-details">
-                        <div class="education-school">Clemson University</div>
-                        <div class="education-degree">Bachelor of Science - BS, Computer Science</div>
-                        <div class="education-date">Aug 2023 - Present</div>
-                    </div>
-                </div>
+            <!-- Content will be added later -->
+        </div>
+    </section>
 
-                <div class="education-card">
-                    <img src="logos/gssm.png" alt="SCGSSM" class="education-logo">
-                    <div class="education-details">
-                        <div class="education-school">South Carolina Governor's School for Science & Mathematics</div>
-                        <div class="education-degree">High School Diploma, Computer Science</div>
-                        <div class="education-date">Aug 2021 - May 2023</div>
-                    </div>
-                </div>
-            </div>
+    <section id="experience">
+        <div class="section-container">
+            <h2>Experience</h2>
+            <!-- Content will be added later -->
         </div>
     </section>
 
     <section id="skills">
-        <div class="section-content">
+        <div class="section-container">
             <h2>Skills</h2>
-            <div style="
-                text-align: center;
-                padding: 40px;
-                font-size: 1.2rem;
-                color: #666;
-                font-style: italic;
-            ">
-                In Progress...
-            </div>
+            <!-- Content will be added later -->
         </div>
     </section>
 
-    <style>
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            background: var(--primary);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .timeline-item {
-            margin-bottom: 60px;
-            position: relative;
-            width: 50%;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item::after {
-            background-image: var(--logo-url);
-            background-size: 70%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: white;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            z-index: 2;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            top: 50%;
-            margin-top: -25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .timeline-item:hover::after {
-            transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        
-        .timeline-item:nth-child(odd) {
-            padding-right: 40px;
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(odd)::after {
-            right: -25px;
-            transform: translateX(0);
-        }
-        
-        .timeline-item:nth-child(even) {
-            padding-left: 40px;
-            left: 50%;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -25px;
-            transform: translateX(0);
-        }
-        
-        .timeline-content {
-            padding: 0;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden;
-        }
-
-        .timeline-header {
-            background: #f8f9fa;
-            padding: 12px 16px;
-            border-bottom: 1px solid #e9ecef;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .window-controls {
-            display: flex;
-            gap: 8px;
-        }
-
-        .window-control:nth-child(1) {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ff5f57;
-        }
-
-        .window-control:nth-child(2) {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #febc2e;
-        }
-
-        .window-control:nth-child(3) {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #28c840;
-        }
-
-        .timeline-body {
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .timeline-content-text {
-            flex: 1;
-            padding-right: 20px;
-        }
-
-        .timeline-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-        }
-        
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-date {
-            font-size: 0.9rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
-        }
-        
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
-        .timeline-company {
-            font-size: 1rem;
-            color: #34495e;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        
-        .timeline-location {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-bottom: 12px;
-        }
-        
-        .timeline-description {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #34495e;
-        }
-        
-        .timeline-date {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-company {
-            color: #666;
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-location {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-description {
-            color: #444;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .timeline::before {
-                left: 30px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding: 0 0 0 70px !important;
-                margin-bottom: 40px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after {
-                left: 22px;
-                top: 20px;
-            }
-            
-            .timeline-content {
-                padding: 20px;
-            }
-            
-            .timeline-title {
-                font-size: 1rem;
-            }
-            
-            .timeline-company {
-                font-size: 0.95rem;
-            }
-            
-            .timeline-description {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-
-    <section id="experience">
-        <div class="section-content">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/clemson.png" alt="Clemson University Logo" class="company-logo">
-                        <div class="timeline-date">Aug 2025 - Present</div>
-                        <div class="timeline-title">Data Engineering Intern</div>
-                        <div class="timeline-company">Clemson University</div>
-                        <div class="timeline-location">Clemson University, South Carolina · On-site</div>
-                        <div class="timeline-description">Clemson Energy Visualization Analytics Center - Data Engineering Intern</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/capgemini.png" alt="Capgemini Logo" class="company-logo">
-                        <div class="timeline-date">Aug 2025 - Present</div>
-                        <div class="timeline-title">Software Engineer Intern</div>
-                        <div class="timeline-company">Capgemini</div>
-                        <div class="timeline-description">School of Computing Senior Capstone Project: Developing A.I. agents</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/gwc.png" alt="Girls Who Code Logo" class="company-logo">
-                        <div class="timeline-date">May 2025 - Present</div>
-                        <div class="timeline-title">President</div>
-                        <div class="timeline-company">Girls Who Code</div>
-                        <div class="timeline-location">Clemson University, South Carolina</div>
-                        <div class="timeline-description">Coordinate bi-weekly meetings with recruiter sessions, organize hackathons, interviews, and networking prep events</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/citi.png" alt="Citi Logo" class="company-logo">
-                        <div class="timeline-date">Jun 2025 - Aug 2025</div>
-                        <div class="timeline-title">Software Development Intern</div>
-                        <div class="timeline-company">Citi</div>
-                        <div class="timeline-location">Irving, Texas, United States</div>
-                        <div class="timeline-description">iOS Container Team</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/niwc.png" alt="NIWC Logo" class="company-logo">
-                        <div class="timeline-date">Feb 2025 - May 2025</div>
-                        <div class="timeline-title">Student Software Engineer Intern</div>
-                        <div class="timeline-company">Naval Information Warfare Center Atlantic</div>
-                        <div class="timeline-description">Developed an AI-powered adaptive learning platform with an interactive frontend and AWS-integrated backend</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/clemson.png" alt="Clemson University Logo" class="company-logo">
-                        <div class="timeline-date">Jan 2024 - May 2025</div>
-                        <div class="timeline-title">Student Support Center Consultant</div>
-                        <div class="timeline-company">Clemson University</div>
-                        <div class="timeline-location">Clemson University, South Carolina · Hybrid</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/clemson.png" alt="Clemson University Logo" class="company-logo">
-                        <div class="timeline-date">Aug 2024 - Dec 2024</div>
-                        <div class="timeline-title">Student Research Assistant</div>
-                        <div class="timeline-company">Clemson University College of Engineering</div>
-                        <div class="timeline-location">Clemson University, South Carolina</div>
-                        <div class="timeline-description">Conducted research in simulation-based AI laboratory, focusing on integrating AI and ML into robotics. Specialized in AI-driven object detection for autonomous vehicles.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/webacy.png" alt="Webacy Logo" class="company-logo">
-                        <div class="timeline-date">Sep 2024 - Oct 2024</div>
-                        <div class="timeline-title">C.S. Cybersecurity Extern</div>
-                        <div class="timeline-company">Webacy</div>
-                        <div class="timeline-description">Gained hands-on experience in Web 3.0 cybersecurity, focusing on blockchain technologies and NFT asset protection. Conducted research on Web3 security trends.</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <img src="logos/usc.png" alt="University of South Carolina Logo" class="company-logo">
-                        <div class="timeline-date">Jun 2022 - Jul 2022</div>
-                        <div class="timeline-title">Student Researcher</div>
-                        <div class="timeline-company">University of South Carolina</div>
-                        <div class="timeline-location">Columbia, South Carolina</div>
-                        <div class="timeline-description">Conducted public health research in Dr. Eric Vejerano's lab, analyzing mask effectiveness during COVID-19. Presented findings at USC and SCGSSM Colloquium.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Animate timeline items when they come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        document.querySelectorAll('.timeline-item').forEach((item) => {
-            observer.observe(item);
-        });
-    </script>
-
-        <section id="projects">
-        <div class="section-content">
+    <section id="projects">
+        <div class="section-container">
             <h2>Projects</h2>
-            <div style="
-                text-align: center;
-                padding: 40px;
-                font-size: 1.2rem;
-                color: #666;
-                font-style: italic;
-            ">
-                In Progress...
-            </div>
+            <!-- Content will be added later -->
         </div>
     </section>
 
     <section id="contact">
-        <div class="section-content">
-            <h2>Get in Touch</h2>
-            <div class="contact-links" style="
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-                margin-top: 2rem;
-            ">
-                <a href="mailto:keerthisurisetty11@gmail.com" style="
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    text-decoration: none;
-                    color: var(--text);
-                    font-size: 1.1rem;
-                    transition: color 0.3s;
-                ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    keerthisurisetty11@gmail.com
-                </a>
-                
-                <a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank" style="
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    text-decoration: none;
-                    color: var(--text);
-                    font-size: 1.1rem;
-                    transition: color 0.3s;
-                ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    LinkedIn Profile
-                </a>
-                
-                <a href="https://github.com/keerthisurisetty" target="_blank" style="
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    text-decoration: none;
-                    color: var(--text);
-                    font-size: 1.1rem;
-                    transition: color 0.3s;
-                ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    GitHub Profile
-                </a>
-            </div>
-            <style>
-                .contact-links a:hover {
-                    color: var(--primary);
-                }
-                .contact-links svg {
-                    transition: stroke 0.3s;
-                }
-                .contact-links a:hover svg {
-                    stroke: var(--primary);
-                }
-            </style>
+        <div class="section-container">
+            <h2>Contact</h2>
+            <!-- Content will be added later -->
         </div>
     </section>
+
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
