@@ -46,6 +46,15 @@
             padding: 0 2rem;
         }
 
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            float: right;
+            border-radius: 4px;
+        }
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -296,12 +305,62 @@
         }
     </style>
 
+    <style>
+        .education-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .education-card {
+            width: 100%;
+            min-height: 160px;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .education-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .education-school {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .education-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .education-logo {
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+
     <section id="education">
         <div class="section-content">
             <h2>Education</h2>
-            <div style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+            <div class="education-container">
                 <div class="education-card">
-                    <img src="https://www.clemson.edu/brand/resources/logos/paw/orange.png" alt="Clemson University" class="education-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYCGfDlIVcrM-NvdXFqyD_GhD57JclcZM_sw&usqp=CAU" alt="Clemson University" class="education-logo">
                     <div class="education-details">
                         <div class="education-school">Clemson University</div>
                         <div class="education-degree">Bachelor of Science - BS, Computer Science</div>
@@ -310,7 +369,7 @@
                 </div>
 
                 <div class="education-card">
-                    <img src="https://gssm.org/wp-content/uploads/2018/07/gssm-logo.png" alt="SCGSSM" class="education-logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1kN_BpVGCIwfdthWlnYGIXDXegxplD0XN5A&usqp=CAU" alt="SCGSSM" class="education-logo">
                     <div class="education-details">
                         <div class="education-school">South Carolina Governor's School for Science & Mathematics</div>
                         <div class="education-degree">High School Diploma, Computer Science</div>
@@ -324,19 +383,14 @@
     <section id="skills">
         <div class="section-content">
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Product Management</h3>
-                    <p>Agile methodologies, User Stories, Product Strategy, Roadmap Planning</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Design</h3>
-                    <p>UI/UX Design, Wireframing, Prototyping, User Research</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Python, Git</p>
-                </div>
+            <div style="
+                text-align: center;
+                padding: 40px;
+                font-size: 1.2rem;
+                color: #666;
+                font-style: italic;
+            ">
+                In Progress...
             </div>
         </div>
     </section>
@@ -363,7 +417,7 @@
         .timeline-item {
             margin-bottom: 60px;
             position: relative;
-            width: 50%;
+            width: calc(50% - 1px);
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease;
@@ -379,20 +433,20 @@
             position: absolute;
             width: 16px;
             height: 16px;
-            right: -8px;
             background-color: var(--primary);
             border: 3px solid #fff;
-            top: 20px;
             border-radius: 50%;
             z-index: 2;
             transition: all 0.3s ease;
             box-shadow: 0 0 0 4px rgba(42, 82, 152, 0.1);
+            top: 50%;
+            transform: translateY(-50%);
         }
         
         .timeline-item:hover::after {
             background-color: #fff;
             border-color: var(--primary);
-            transform: scale(1.2);
+            transform: translateY(-50%) scale(1.2);
         }
         
         .timeline-item:nth-child(odd) {
@@ -400,14 +454,17 @@
             left: 0;
         }
         
+        .timeline-item:nth-child(odd)::after {
+            right: -9px;
+        }
+        
         .timeline-item:nth-child(even) {
             padding-left: 50px;
-            left: 50%;
+            left: calc(50% + 1px);
         }
         
         .timeline-item:nth-child(even)::after {
-            left: -8px;
-            right: auto;
+            left: -9px;
         }
         
         .timeline-content {
@@ -532,6 +589,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Aug 2025 - Present</div>
                         <div class="timeline-title">Data Engineering Intern</div>
                         <div class="timeline-company">Clemson University</div>
@@ -542,6 +600,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/capgemini.png" alt="Capgemini Logo" class="company-logo">
                         <div class="timeline-date">Aug 2025 - Present</div>
                         <div class="timeline-title">Software Engineer Intern</div>
                         <div class="timeline-company">Capgemini</div>
@@ -551,6 +610,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/gwc.png" alt="Girls Who Code Logo" class="company-logo">
                         <div class="timeline-date">May 2025 - Present</div>
                         <div class="timeline-title">President</div>
                         <div class="timeline-company">Girls Who Code</div>
@@ -561,6 +621,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/citi.png" alt="Citi Logo" class="company-logo">
                         <div class="timeline-date">Jun 2025 - Aug 2025</div>
                         <div class="timeline-title">Software Development Intern</div>
                         <div class="timeline-company">Citi</div>
@@ -571,6 +632,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/niwc.png" alt="NIWC Logo" class="company-logo">
                         <div class="timeline-date">Feb 2025 - May 2025</div>
                         <div class="timeline-title">Student Software Engineer Intern</div>
                         <div class="timeline-company">Naval Information Warfare Center Atlantic</div>
@@ -580,6 +642,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Jan 2024 - May 2025</div>
                         <div class="timeline-title">Student Support Center Consultant</div>
                         <div class="timeline-company">Clemson University</div>
@@ -589,6 +652,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/clemson.png" alt="Clemson University Logo" class="company-logo">
                         <div class="timeline-date">Aug 2024 - Dec 2024</div>
                         <div class="timeline-title">Student Research Assistant</div>
                         <div class="timeline-company">Clemson University College of Engineering</div>
@@ -599,6 +663,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/webacy.png" alt="Webacy Logo" class="company-logo">
                         <div class="timeline-date">Sep 2024 - Oct 2024</div>
                         <div class="timeline-title">C.S. Cybersecurity Extern</div>
                         <div class="timeline-company">Webacy</div>
@@ -608,6 +673,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-content">
+                        <img src="assets/logos/usc.png" alt="University of South Carolina Logo" class="company-logo">
                         <div class="timeline-date">Jun 2022 - Jul 2022</div>
                         <div class="timeline-title">Student Researcher</div>
                         <div class="timeline-company">University of South Carolina</div>
@@ -636,17 +702,17 @@
         });
     </script>
 
-    <section id="projects">
+        <section id="projects">
         <div class="section-content">
             <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A minimalist portfolio showcasing my work and skills.</p>
-                    </div>
-                </div>
-                <!-- Add more project cards as needed -->
+            <div style="
+                text-align: center;
+                padding: 40px;
+                font-size: 1.2rem;
+                color: #666;
+                font-style: italic;
+            ">
+                In Progress...
             </div>
         </div>
     </section>
