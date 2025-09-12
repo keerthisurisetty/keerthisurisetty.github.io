@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keerthi Surisetty | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <style>
         :root {
             /* Modern, muted color palette */
@@ -393,7 +395,7 @@
             border-top: 4px solid var(--accent);
         }
 
-        .coursework-projects .project-card {
+        .other-projects .project-card {
             border-top: 4px solid #6c757d;
         }
 
@@ -461,6 +463,13 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 3rem; /* size of icons */
         }
 
         .skill-tag {
@@ -736,7 +745,18 @@
     <section id="skills">
         <div class="section-container">
             <h2>Skills</h2>
-            <!-- Content will be added later -->
+            <div class="skills-grid">
+            <i class="devicon-python-plain colored"></i>
+            <i class="devicon-java-plain colored"></i>
+            <i class="devicon-cplusplus-plain colored"></i>
+            <i class="devicon-flask-original colored"></i>
+            <i class="devicon-aws-plain colored"></i>
+            <i class="devicon-react-original colored"></i>
+            <i class="devicon-html5-plain colored"></i>
+            <i class="devicon-css3-plain colored"></i>
+            <i class="devicon-javascript-plain colored"></i>
+            <i class="devicon-git-plain colored"></i>
+            <i class="devicon-github-original"></i>
         </div>
     </section>
 
@@ -1084,12 +1104,12 @@
 
         // Initialize both carousels
         initializeCarousel('featured-projects');
-        initializeCarousel('coursework-projects');
+        initializeCarousel('other-projects');
 
         // Handle responsive layout for all carousels
         window.addEventListener('resize', () => {
             initializeCarousel('featured-projects');
-            initializeCarousel('coursework-projects');
+            initializeCarousel('other-projects');
         });
     </script>
 </body>
