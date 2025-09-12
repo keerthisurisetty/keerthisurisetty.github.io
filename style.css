@@ -78,6 +78,21 @@ p {
     color: #555;
 }
 
+/* Experience section */
+.experience-item {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
 /* Contact form */
 form {
     max-width: 600px;
