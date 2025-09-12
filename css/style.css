@@ -75,6 +75,26 @@ body {
 }
 
 /*-------------------------
+    SECTIONS & ALTERNATE BACKGROUND
+-------------------------*/
+section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+section:nth-child(even) {
+  background: var(--bg-dark);
+}
+
+section:nth-child(odd) {
+  background: var(--bg-light);
+}
+
+/*-------------------------
     HERO
 -------------------------*/
 .hero {
@@ -83,37 +103,23 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: var(--bg-dark);
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
   color: var(--text);
-  max-width: 700px;
+  opacity: 0.8;
+  line-height: 1.6;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-/*-------------------------
-    SECTIONS
--------------------------*/
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 6rem 2rem 3rem 2rem;
-}
-
-h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: var(--accent);
-  text-align: center;
 }
 
 /*-------------------------
@@ -123,10 +129,10 @@ h2 {
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  text-align: justify;
   font-size: 1.1rem;
   line-height: 1.8;
 }
@@ -144,25 +150,32 @@ h2 {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
 }
 
 .education-card img {
-  width: 80px;
+  width: 100px;
   height: auto;
   margin-bottom: 1rem;
+  object-fit: contain;
 }
 
 .education-card h3 {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  color: var(--accent);
+  color: var(--text);
 }
 
 .degree, .period {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1.1rem;
+  color: var(--text);
+  opacity: 0.8;
 }
 
 /*-------------------------
@@ -173,15 +186,7 @@ h2 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  font-size: 2rem;
-}
-
-.skills-grid i {
-  transition: transform 0.3s ease;
-}
-
-.skills-grid i:hover {
-  transform: scale(1.3);
+  font-size: 3rem;
 }
 
 /*-------------------------
@@ -189,71 +194,115 @@ h2 {
 -------------------------*/
 .projects-container {
   position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;
   overflow: hidden;
-  margin-top: 2rem;
+  padding: 0 1rem;
 }
 
 .projects-carousel {
   display: flex;
+  transition: transform 0.5s ease;
   gap: 1rem;
-  transition: transform 0.5s ease-in-out;
 }
 
 .project-card {
+  flex: 0 0 calc(33.333% - 1rem);
   background: #fff;
   border-radius: 12px;
-  padding: 1rem;
-  min-width: calc(33.333% - 1rem);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  transform: scale(0.95);
 }
 
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
+.project-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+  opacity: 1;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.project-card h3 {
-  font-size: 1.2rem;
+.project-period {
+  font-size: 0.9rem;
   color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
-.project-card p {
+.project-org {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.project-description {
   font-size: 0.95rem;
-  color: #555;
-  text-align: center;
+  color: var(--text);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background: rgba(34, 139, 230, 0.1);
+  color: var(--accent);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(37, 96, 148, 0.8);
-  color: #fff;
+  background: var(--accent);
+  color: white;
   border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 2;
   transition: all 0.3s ease;
 }
 
 .carousel-button:hover {
-  background: var(--accent);
+  background: var(--text);
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-button.prev {
-  left: 0.5rem;
+  left: 0;
 }
 
 .carousel-button.next {
-  right: 0.5rem;
+  right: 0;
 }
 
 /*-------------------------
@@ -261,12 +310,15 @@ h2 {
 -------------------------*/
 .contact-container {
   text-align: center;
-  padding: 4rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .contact-message {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+  color: var(--text);
+  line-height: 1.6;
 }
 
 .social-links {
@@ -276,15 +328,23 @@ h2 {
 }
 
 .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  border-radius: 8px;
   text-decoration: none;
-  color: var(--accent);
+  color: var(--text);
   font-weight: 500;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .social-link:hover {
-  color: #184a7c;
-  text-decoration: underline;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  color: var(--accent);
 }
 
 /*-------------------------
@@ -292,23 +352,28 @@ h2 {
 -------------------------*/
 @media (max-width: 1024px) {
   .project-card {
-    min-width: calc(50% - 1rem);
+    flex: 0 0 calc(50% - 1rem);
   }
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+  .project-card {
+    flex: 0 0 calc(100% - 1rem);
   }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
 
-  .project-card {
-    min-width: calc(100% - 1rem);
-  }
-
   .nav-links {
     display: none;
+  }
+
+  section {
+    padding: 4rem 1.5rem;
   }
 }
