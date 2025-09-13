@@ -17,7 +17,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#experiences">Experiences</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -32,7 +31,7 @@
   </section>
 
   <section id="about-details">
-    <h2>About</h2>
+    <h2>About Me</h2>
     <p>
       I'm a Computer Science major in the Clemson University Honors College, minoring in Artificial Intelligence. 
       From software engineering to full-stack development to machine learning, I've loved diving into projects that challenge me to think differently and find creative solutions. 
@@ -44,7 +43,6 @@
   <section id="education">
     <h2>Education</h2>
     <div class="education-container">
-      <!-- Clemson University -->
       <div class="edu-card">
         <img src="images/clemson.png" alt="Clemson University Logo" class="edu-logo">
         <div class="edu-details">
@@ -54,8 +52,6 @@
           <p>Minor – Artificial Intelligence</p>
         </div>
       </div>
-
-      <!-- South Carolina Governor's School -->
       <div class="edu-card">
         <img src="images/gssm.png" alt="GSSM Logo" class="edu-logo">
         <div class="edu-details">
@@ -67,88 +63,119 @@
     </div>
   </section>
 
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <!-- Programming Languages -->
+      <div class="skill-card"><i class="fab fa-python skill-icon"></i> Python</div>
+      <div class="skill-card"><i class="fab fa-java skill-icon"></i> Java</div>
+      <div class="skill-card"><i class="fas fa-code skill-icon"></i> C / C++</div>
+      <div class="skill-card"><i class="fab fa-js skill-icon"></i> JavaScript</div>
+      <div class="skill-card"><i class="fab fa-html5 skill-icon"></i> HTML / CSS</div>
+      <div class="skill-card"><i class="fas fa-database skill-icon"></i> SQL</div>
+      <div class="skill-card"><i class="fab fa-react skill-icon"></i> React.js / Blazor</div>
+      <div class="skill-card"><i class="fab fa-angular skill-icon"></i> Angular</div>
+      <div class="skill-card"><i class="fas fa-server skill-icon"></i> Flask</div>
+      <div class="skill-card"><i class="fas fa-network-wired skill-icon"></i> REST APIs</div>
+
+      <!-- Design & Cloud -->
+      <div class="skill-card"><i class="fab fa-figma skill-icon"></i> Figma (UI/UX)</div>
+      <div class="skill-card"><i class="fab fa-aws skill-icon"></i> AWS</div>
+      <div class="skill-card"><i class="fas fa-cloud skill-icon"></i> Azure</div>
+      <div class="skill-card"><i class="fas fa-server skill-icon"></i> Red Hat OpenShift</div>
+      <div class="skill-card"><i class="fab fa-docker skill-icon"></i> Docker / CI-CD</div>
+      <div class="skill-card"><i class="fas fa-cloud skill-icon"></i> Google Cloud</div>
+
+      <!-- Data / AI -->
+      <div class="skill-card"><i class="fas fa-chart-line skill-icon"></i> Pandas</div>
+      <div class="skill-card"><i class="fas fa-chart-bar skill-icon"></i> NumPy</div>
+      <div class="skill-card"><i class="fas fa-chart-area skill-icon"></i> Matplotlib</div>
+      <div class="skill-card"><i class="fas fa-robot skill-icon"></i> PyTorch</div>
+      <div class="skill-card"><i class="fas fa-project-diagram skill-icon"></i> Linear Regression</div>
+      <div class="skill-card"><i class="fas fa-project-diagram skill-icon"></i> KNN / KMeans / Naive Bayes</div>
+      <div class="skill-card"><i class="fas fa-chart-pie skill-icon"></i> Data Visualization / EDA</div>
+      <div class="skill-card"><i class="fas fa-brain skill-icon"></i> AI/ML Modeling & Optimization</div>
+      <div class="skill-card"><i class="fas fa-calculator skill-icon"></i> Quantitative Analysis / DP</div>
+      <div class="skill-card"><i class="fas fa-cogs skill-icon"></i> LangChain / LangGraph</div>
+      <div class="skill-card"><i class="fas fa-cogs skill-icon"></i> Semantic Kernel</div>
+      <div class="skill-card"><i class="fas fa-bullseye skill-icon"></i> Object Detection (Y.O.L.O.)</div>
+      <div class="skill-card"><i class="fas fa-robot skill-icon"></i> AI-powered Chatbots</div>
+      <div class="skill-card"><i class="fas fa-graduation-cap skill-icon"></i> Adaptive Learning Platforms</div>
+
+      <!-- Tools & Management -->
+      <div class="skill-card"><i class="fab fa-git-alt skill-icon"></i> Git / GitHub / BitBucket</div>
+      <div class="skill-card"><i class="fas fa-tasks skill-icon"></i> Jira / Trello / Agile</div>
+      <div class="skill-card"><i class="fas fa-vial skill-icon"></i> Postman</div>
+      <div class="skill-card"><i class="fas fa-terminal skill-icon"></i> EMACS / VIM / Linux / Unix</div>
+      <div class="skill-card"><i class="fas fa-file-alt skill-icon"></i> MS Office</div>
+      <div class="skill-card"><i class="fab fa-adobe skill-icon"></i> Adobe Creative Cloud</div>
+      <div class="skill-card"><i class="fas fa-cube skill-icon"></i> CAD / 3D Printing</div>
+      <div class="skill-card"><i class="fas fa-flask skill-icon"></i> Anaconda / Jupyter</div>
+      <div class="skill-card"><i class="fas fa-users-cog skill-icon"></i> Project Management</div>
+      <div class="skill-card"><i class="fas fa-user-friends skill-icon"></i> Team Leadership</div>
+      <div class="skill-card"><i class="fas fa-handshake skill-icon"></i> Industry Liaison Experience</div>
+      <div class="skill-card"><i class="fas fa-university skill-icon"></i> Campus Outreach & Diversity Initiatives</div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
 
     <!-- Featured Projects -->
-    <h3>Featured Projects</h3>
+    <h3>Featured</h3>
     <div class="carousel-container" id="featured-carousel">
       <button class="carousel-arrow left" data-target="featured-carousel">&#10094;</button>
       <div class="carousel-track">
         <div class="project-card">
           <h4 class="project-title">Project 1</h4>
           <p class="project-desc">This is a brief description of project 1.</p>
-          <p class="project-skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </p>
+          <p class="project-skills"><span>HTML</span><span>CSS</span><span>JS</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project 2</h4>
           <p class="project-desc">This is a brief description of project 2.</p>
-          <p class="project-skills">
-            <span>Python</span>
-            <span>Flask</span>
-          </p>
+          <p class="project-skills"><span>Python</span><span>Flask</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project 3</h4>
           <p class="project-desc">This is a brief description of project 3.</p>
-          <p class="project-skills">
-            <span>React</span>
-            <span>Node.js</span>
-          </p>
+          <p class="project-skills"><span>React</span><span>Node.js</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project 4</h4>
           <p class="project-desc">This is a brief description of project 4.</p>
-          <p class="project-skills">
-            <span>AI</span>
-            <span>Python</span>
-          </p>
+          <p class="project-skills"><span>AI</span><span>Python</span></p>
         </div>
       </div>
       <button class="carousel-arrow right" data-target="featured-carousel">&#10095;</button>
     </div>
 
     <!-- Other Projects -->
-    <h3>Other Projects</h3>
+    <h3>Other</h3>
     <div class="carousel-container" id="other-carousel">
       <button class="carousel-arrow left" data-target="other-carousel">&#10094;</button>
       <div class="carousel-track">
         <div class="project-card">
           <h4 class="project-title">Project A</h4>
           <p class="project-desc">Brief description of project A.</p>
-          <p class="project-skills">
-            <span>HTML</span>
-            <span>CSS</span>
-          </p>
+          <p class="project-skills"><span>HTML</span><span>CSS</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project B</h4>
           <p class="project-desc">Brief description of project B.</p>
-          <p class="project-skills">
-            <span>JavaScript</span>
-            <span>Node.js</span>
-          </p>
+          <p class="project-skills"><span>JavaScript</span><span>Node.js</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project C</h4>
           <p class="project-desc">Brief description of project C.</p>
-          <p class="project-skills">
-            <span>React</span>
-            <span>API</span>
-          </p>
+          <p class="project-skills"><span>React</span><span>API</span></p>
         </div>
         <div class="project-card">
           <h4 class="project-title">Project D</h4>
           <p class="project-desc">Brief description of project D.</p>
-          <p class="project-skills">
-            <span>Python</span>
-            <span>Flask</span>
-          </p>
+          <p class="project-skills"><span>Python</span><span>Flask</span></p>
         </div>
       </div>
       <button class="carousel-arrow right" data-target="other-carousel">&#10095;</button>
@@ -160,21 +187,9 @@
     <h2>Contact</h2>
     <p>I'm always down for a chat! Please feel free to reach out! 😊</p>
     <ul class="contact-links">
-      <li>
-        <a href="mailto:keerthisurisetty11@gmail.com">
-          <i class="fa-solid fa-envelope"></i> keerthisurisetty11@gmail.com
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/keerthisurisetty" target="_blank">
-          <i class="fa-brands fa-github"></i> GitHub
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
-        </a>
-      </li>
+      <li><a href="mailto:keerthisurisetty11@gmail.com"><i class="fa-solid fa-envelope"></i> keerthisurisetty11@gmail.com</a></li>
+      <li><a href="https://github.com/keerthisurisetty" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
     </ul>
   </section>
 
