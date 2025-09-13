@@ -132,7 +132,10 @@ section p {
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  min-height: 2000px;
 }
+
 
 .project-card:hover {
   transform: translateY(-6px);
