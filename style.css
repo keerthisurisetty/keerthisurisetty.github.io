@@ -133,7 +133,7 @@ section p {
   justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  min-height: 2000px;
+  min-height: 200;
 }
 
 
@@ -156,7 +156,7 @@ section p {
   margin-bottom: 1rem;
 
   display: -webkit-box;
-  -webkit-line-clamp: 3;       /* show only 3 lines */
+  -webkit-line-clamp: 8;       /* show only 8 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -166,13 +166,23 @@ section p {
   overflow: visible;
 }
 
-.project-skills {
-  font-size: 0.85rem;
-  color: #666;
+.project-skills span {
+  display: inline-block;
+  background-color: #ff6b81; /* cute accent color */
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  margin: 0.2rem;
+  border-radius: 8px; /* makes it rounded corners */
+  font-size: 0.8rem;
   font-weight: 500;
-  border-top: 1px solid #eee;
-  padding-top: 0.8rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
+.project-skills span:hover {
+  transform: scale(1.1);
+  background-color: #ff4c63; /* slightly darker on hover */
+}
+
 
 /* Responsive grid */
 @media (max-width: 1024px) {
