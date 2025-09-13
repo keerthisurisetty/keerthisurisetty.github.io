@@ -128,7 +128,7 @@ section p {
 }
 
 .project-card {
-  min-width: 280px;
+  min-width: 30%; /* Show ~3 cards at a time */
   flex: 0 0 auto;
   background: #fff;
   border-radius: 16px;
@@ -272,12 +272,12 @@ section p {
 /* Responsive Carousel */
 @media (max-width: 1024px) {
   .project-card {
-    min-width: 220px;
+    min-width: 45%; /* 2 cards visible */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .project-card {
-    min-width: 180px;
+    min-width: 70%; /* 1 card visible */
   }
 }
