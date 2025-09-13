@@ -128,8 +128,9 @@ section p {
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 1.5rem;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -142,24 +143,24 @@ section p {
   color: #ff6b81;
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
-/* Description with line clamp (first 3 lines by default) */
+/* Proper description clamping */
 .project-desc {
   font-size: 0.95rem;
   color: #444;
   margin-bottom: 1rem;
+
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* show only 3 lines */
+  -webkit-line-clamp: 3;       /* show only 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
-  transition: all 0.4s ease;
 }
 
-/* Show full description on hover */
 .project-card:hover .project-desc {
-  -webkit-line-clamp: unset;
-  max-height: none;
+  -webkit-line-clamp: unset;   /* remove clamp on hover */
+  overflow: visible;
 }
 
 .project-skills {
@@ -183,7 +184,6 @@ section p {
   }
 }
 
-
 /* Contact Section */
 .contact-links {
   list-style: none;
@@ -192,26 +192,8 @@ section p {
 }
 
 .contact-links li {
-  margin: 0.5rem 0;
-}
-
-.contact-links a {
-  text-decoration: none;
-  color: #ff6b81;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-/* Contact Links with Icons */
-.contact-links li {
   margin: 0.75rem 0;
   font-size: 1.1rem;
-}
-
-.contact-links i {
-  margin-right: 0.5rem;
-  color: #ff6b81;
-  transition: transform 0.3s ease;
 }
 
 .contact-links a {
@@ -219,6 +201,12 @@ section p {
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
+}
+
+.contact-links i {
+  margin-right: 0.5rem;
+  color: #ff6b81;
+  transition: transform 0.3s ease;
 }
 
 .contact-links a:hover {
@@ -229,13 +217,7 @@ section p {
   transform: scale(1.2);
 }
 
-
-.contact-links a:hover {
-  color: #333;
-}
-
-
-/* Responsive */
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
