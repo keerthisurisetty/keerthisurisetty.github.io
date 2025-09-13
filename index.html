@@ -1,189 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KS Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">AB</div>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">KS</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
+  </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h1>About Me</h1>
-        <p>I'm a Computer Science major in the Clemson University Honors College, minoring in Artificial Intelligence. From software engineering to full-stack development to machine learning, l've loved diving into projects that challenge me to think differently and find creative solutions. I love exploring new opportunities and experiences. Curious, adaptable, and solutions-driven, l'm passionate about building technology that connects ideas and makes a real-world impact.</p>
-    </section>
+  <!-- Sections -->
+  <section id="about">
+    <h1>Hello, I’m Keerthi Surisetty 👋</h1>
+    <p>I’m passionate about turning curiosity and creativity into technology that makes a difference.</p>
+  </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>Education</h2>
-        <div class="education-item">
-        <img src="images/clemson.png" alt="Clemson University Logo" class="education-logo">
-        <h3>Clemson University</h3>
-        <p><strong>Bachelor of Science (BS), Computer Science</strong></p>
-        <p>Aug 2023 - May 2027</p>
-        <p><strong>Skills:</strong> C++, Python, Data Structures, Algorithms, SQL, Git, Machine Learning</p>
-    </div>
+  <section id="education">
+    <h2>Education</h2>
+    <p>Details about your academic background go here.</p>
+  </section>
 
-    <!-- South Carolina Governor's School for Science & Mathematics -->
-    <div class="education-item">
-        <img src="images/scgssm.png" alt="South Carolina Governor's School for Science & Mathematics Logo" class="education-logo">
-        <h3>South Carolina Governor's School for Science & Mathematics</h3>
-        <p><strong>High School Diploma, Computer Science</strong></p>
-        <p>Aug 2021 - May 2023</p>
-        <p><strong>Skills:</strong> Python, Office 365, Research, Robotics, Team Collaboration, Problem Solving</p>
-    </div>
-    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>List your technical and soft skills here.</p>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <!-- Clemson University - Data Engineering Intern -->
-    <div class="experience-item">
-        <img src="images/clemson.png" alt="Clemson University Logo" class="experience-logo">
-        <h3>Data Engineering Intern</h3>
-        <p><strong>Clemson University · Internship</strong></p>
-        <p>Aug 2025 - Present · 2 mos</p>
-        <p>Clemson Energy Visualization Analytics Center, South Carolina, United States · On-site</p>
-    </div>
+  <section id="experiences">
+    <h2>Experiences</h2>
+    <p>Highlight your work or internship experiences here.</p>
+  </section>
 
-    <!-- Capgemini - Software Engineer Intern -->
-    <div class="experience-item">
-        <img src="images/capgemini.png" alt="Capgemini Logo" class="experience-logo">
-        <h3>Software Engineer Intern</h3>
-        <p><strong>Capgemini · Internship</strong></p>
-        <p>Aug 2025 - Present · 2 mos</p>
-        <p>School of Computing Senior Capstone Project: Developing A.I. agents</p>
-    </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Showcase your favorite projects here.</p>
+  </section>
 
-    <!-- Girls Who Code -->
-    <div class="experience-item">
-        <img src="images/girlswhocode.png" alt="Girls Who Code Logo" class="experience-logo">
-        <h3>President / Vice President</h3>
-        <p><strong>Girls Who Code</strong></p>
-        <p>Vice President: Aug 2024 - May 2025 · 10 mos | President: May 2025 - Present · 5 mos</p>
-        <p>Clemson University, South Carolina, United States · On-site</p>
-        <p>Coordinate bi-weekly meetings, organize hackathons, interviews, and networking prep events</p>
-        <p><strong>Skills:</strong> Leadership · Event Planning · Networking</p>
-    </div>
+<section id="contact">
+  <h2>Contact</h2>
+  <p>I'm always down for a chat! Please feel free to reach out! 😊</p>
+  <ul class="contact-links">
+    <li>
+      <a href="mailto:keerthisurisetty11@gmail.com">keerthisurisetty11@gmail.com</a>
+    </li>
+    <li>
+      <a href="https://github.com/keerthisurisetty" target="_blank">GitHub</a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank">LinkedIn</a>
+    </li>
+  </ul>
+</section>
 
-    <!-- Citi - Software Development Intern -->
-    <div class="experience-item">
-        <img src="images/citi.png" alt="Citi Logo" class="experience-logo">
-        <h3>Software Development Intern</h3>
-        <p><strong>Citi · Internship</strong></p>
-        <p>Jun 2025 - Aug 2025 · 3 mos</p>
-        <p>Irving, Texas, United States · iOS Container Team</p>
-        <p><strong>Skills:</strong> SDLC · Red Hat: Open Shift · Harness · Lightspeed · Full Stack · API Development · MongoDB</p>
-    </div>
-
-    <!-- Naval Information Warfare Center Atlantic -->
-    <div class="experience-item">
-        <img src="images/niwc.png" alt="Naval Information Warfare Center Atlantic Logo" class="experience-logo">
-        <h3>Student Software Engineer Intern</h3>
-        <p><strong>Naval Information Warfare Center Atlantic · Internship</strong></p>
-        <p>Feb 2025 - May 2025 · 4 mos</p>
-        <p>Developed an AI-powered adaptive learning platform with interactive frontend and AWS-integrated backend</p>
-        <p><strong>Skills:</strong> AWS · REST APIs · Full Stack · SDLC</p>
-    </div>
-
-    <!-- Clemson University - Student Support Center Consultant -->
-    <div class="experience-item">
-        <img src="images/clemson.png" alt="Clemson University Logo" class="experience-logo">
-        <h3>Student Support Center Consultant</h3>
-        <p><strong>Clemson University · Part-time</strong></p>
-        <p>Jan 2024 - May 2025 · 1 yr 5 mos</p>
-        <p>Clemson University, South Carolina, United States · Hybrid</p>
-        <p><strong>Skills:</strong> Problem Solving · Customer Service · Time Management · C++ · Communication · Computer Literacy</p>
-    </div>
-
-    <!-- C.O.D.A. Co-Chair of Campus Outreach -->
-    <div class="experience-item">
-        <h3>Co-Chair of Campus Outreach</h3>
-        <p><strong>Clemson University Undergraduate Student Government</strong></p>
-        <p>May 2024 - Jan 2025 · 9 mos</p>
-        <p>Clemson University, South Carolina, United States · On-site</p>
-        <p>Advanced diversity and inclusion initiatives, boosting minority engagement and cross-student collaboration</p>
-        <p><strong>Skills:</strong> Leadership · Team Building · Event Management · Community Outreach</p>
-    </div>
-
-    <!-- Clemson University - Student Research Assistant -->
-    <div class="experience-item">
-        <img src="images/clemson_engineering.png" alt="Clemson University College of Engineering Logo" class="experience-logo">
-        <h3>Student Research Assistant</h3>
-        <p><strong>Clemson University College of Engineering, Computing and Applied Sciences</strong></p>
-        <p>Aug 2024 - Dec 2024 · 5 mos</p>
-        <p>AI-driven object detection for autonomous vehicles; research on robotics and ML models using NumPy & PyTorch</p>
-        <p><strong>Skills:</strong> AI · NumPy · PyTorch</p>
-    </div>
-
-    <!-- Webacy - C.S. Cybersecurity Extern -->
-    <div class="experience-item">
-        <img src="images/webacy.png" alt="Webacy Logo" class="experience-logo">
-        <h3>C.S. Cybersecurity Extern</h3>
-        <p><strong>Webacy · Internship</strong></p>
-        <p>Sep 2024 - Oct 2024 · 2 mos</p>
-        <p>Hands-on cybersecurity experience for Web 3.0; blockchain & NFT asset protection, competitor analysis, security protocols</p>
-        <p><strong>Skills:</strong> Computer Science · Cybersecurity · Data Analysis · Blockchain Analysis</p>
-    </div>
-
-    <!-- University of South Carolina - Student Researcher -->
-    <div class="experience-item">
-        <img src="images/usc.png" alt="University of South Carolina Logo" class="experience-logo">
-        <h3>Student Researcher</h3>
-        <p><strong>University of South Carolina · Internship</strong></p>
-        <p>Jun 2022 - Jul 2022 · 2 mos</p>
-        <p>Public health research on mask effectiveness during COVID-19, collaborated with research partners, presented findings</p>
-        <p><strong>Skills:</strong> Quantitative Research · Time Management · Research Skills · Public Health · Public Speaking · Presentation Skills</p>
-    </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Project 1 – Description of the project and technologies used.</p>
-        <p>Project 2 – Description of the project and technologies used.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <p>I'm always down to chat! Please feel free to reach out!</p>
-
-    <!-- Contact Form -->
-    <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-
-    <!-- Social Links -->
-    <div class="social-links">
-        <a href="https://github.com/keerthisurisetty" target="_blank">
-            <img src="images/github-icon.png" alt="GitHub Logo" class="social-icon">
-        </a>
-        <a href="https://www.linkedin.com/in/keerthi-surisetty/" target="_blank">
-            <img src="images/linkedin-icon.png" alt="LinkedIn Logo" class="social-icon">
-        </a>
-    </div>
-    </section>
-
-    <!-- Optional JS -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

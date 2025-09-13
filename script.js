@@ -1,20 +1,7 @@
-// Example: highlight nav link when scrolling
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav ul li a');
+// Toggle mobile menu
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
 });
