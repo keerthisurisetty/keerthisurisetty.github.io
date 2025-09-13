@@ -113,6 +113,77 @@ section p {
   margin-bottom: 0.5rem;
 }
 
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.project-title {
+  color: #ff6b81;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+/* Description with line clamp (first 3 lines by default) */
+.project-desc {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* show only 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* Show full description on hover */
+.project-card:hover .project-desc {
+  -webkit-line-clamp: unset;
+  max-height: none;
+}
+
+.project-skills {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+  border-top: 1px solid #eee;
+  padding-top: 0.8rem;
+}
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* Contact Section */
 .contact-links {
   list-style: none;
