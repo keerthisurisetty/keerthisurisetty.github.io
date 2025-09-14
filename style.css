@@ -132,75 +132,29 @@ section p {
 .skill-card {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.7rem;
   padding: 0.6rem 1rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-/* Keep official colors for logos */
-.skill-card i {
-  font-size: 1.2rem;
+.skill-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 0.2rem;
+  vertical-align: middle;
 }
 
-/* Specific logo colors */
-.python { color: #3776AB; }
-.java { color: #007396; }
-.c { color: #00599C; }
-.javascript { color: #F7DF1E; }
-.html { color: #E34F26; }
-.sql { color: #4479A1; }
-.react { color: #61DAFB; }
-.angular { color: #DD0031; }
-.flask { color: #000000; }
-.rest { color: #FF6C37; }
-.figma { color: #F24E1E; }
-.aws { color: #FF9900; }
-.azure { color: #007FFF; }
-.openshift { color: #EE0000; }
-.docker { color: #2496ED; }
-.googlecloud { color: #4285F4; }
-.pandas { color: #150458; }
-.numpy { color: #013243; }
-.matplotlib { color: #11557C; }
-.pytorch { color: #EE4C2C; }
-.regression { color: #6A1B9A; }
-.knn { color: #6A1B9A; }
-.dataviz { color: #FF6F00; }
-.aiml { color: #FF6F00; }
-.analysis { color: #0D47A1; }
-.langchain { color: #1976D2; }
-.semkernel { color: #1976D2; }
-.yolov { color: #FF5722; }
-.chatbots { color: #009688; }
-.adaptive { color: #4CAF50; }
-.git { color: #F05032; }
-.jira { color: #0052CC; }
-.postman { color: #FF6C37; }
-.terminal { color: #000000; }
-.office { color: #D83B01; }
-.adobe { color: #FF0000; }
-.cad { color: #0D47A1; }
-.anaconda { color: #44A833; }
-.pm { color: #795548; }
-.leadership { color: #FBC02D; }
-.liaison { color: #009688; }
-.diversity { color: #7B1FA2; }
-
-/* Hover effect */
 .skill-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  background-color: #e6f0ff; /* changed hover pink to light blue */
-}
-
-/* Ensure text doesn't wrap inside skill cards */
-.skill-card {
-  white-space: nowrap;
+  background-color: #e6f0ff;
 }
 
 /* Skill badges for project tags */
