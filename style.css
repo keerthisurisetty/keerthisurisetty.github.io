@@ -1,4 +1,19 @@
 /* Feminine, professional blue theme and fonts */
+/* Add section-container class to maintain content width while having full-width backgrounds */
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Alternate section backgrounds */
+.about-section { background: #f3f6fb; }
+.education-section { background: #fff; }
+.experience-section { background: #f3f6fb; }
+.skills-section { background: #fff; }
+.projects-section { background: #f3f6fb; }
+.contact-section { background: #fff; }
+
 body {
   margin: 0;
   font-family: 'Montserrat', 'Playfair Display', serif;
@@ -99,9 +114,7 @@ body {
 }
 
 .about-section {
-  padding: 4rem 2rem 3rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 4rem 0 3rem 0;
   text-align: left;
 }
 
@@ -130,12 +143,9 @@ body {
 }
 
 .education-section {
-  padding: 4rem 2rem 3rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 4rem 0 3rem 0;
   text-align: left;
   background: #fff;
-  border-radius: 18px;
 }
 
 .education-section h2 {
@@ -339,12 +349,9 @@ body {
 }
 
 .skills-section {
-  padding: 4rem 2rem 3rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 4rem 0 3rem 0;
   text-align: left;
   background: #f3f6fb;
-  border-radius: 18px;
 }
 
 .skills-section h2 {
