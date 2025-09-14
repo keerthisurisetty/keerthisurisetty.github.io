@@ -6,6 +6,18 @@
   padding: 0 2rem;
 }
 
+/* Common heading styles for all sections */
+.section-container h2,
+.projects-category h2,
+.experience-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  color: #1a253b;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
 /* Alternate section backgrounds */
 .about-section { background: #f3f6fb; }
 .education-section { background: #fff; }
