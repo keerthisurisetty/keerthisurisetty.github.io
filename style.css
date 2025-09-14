@@ -159,7 +159,7 @@ section p {
 
 /* Skill badges for project tags */
 .project-skills span {
-  display: block;
+  display: inline-block;
   text-align: left;
   background-color: #0056b3;
   color: #fff;
@@ -362,11 +362,11 @@ section p {
 
 .timeline-item:nth-child(odd) {
   left: 0;
-  text-align: right;
+  text-align: left;
 }
 
 .timeline-item:nth-child(even) {
-  left: 50%;
+  left: 0;
   text-align: left;
 }
 
@@ -395,8 +395,9 @@ section p {
   padding: 1.2rem 2.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  display: inline-block;
+  display: block;
   max-width: 98%;
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
