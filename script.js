@@ -33,14 +33,20 @@ function setupCarousel(carouselId) {
     track.style.transition = 'transform 0.5s ease-in-out';
     track.style.transform = `translateX(${position}px)`;
 
-    // After transition, reset if at clones
-    setTimeout(() => {
-      if (position <= -cardWidth * (cards.length)) {
-        position = -cardWidth * visibleCount;
-        track.style.transition = 'none';
-        track.style.transform = `translateX(${position}px)`;
-      }
-    }, 500);
+    // After transition, reset if at clones for seamless effect
+    track.addEventListener('transitionend', handleRightTransition);
+  }
+
+  function handleRightTransition() {
+    track.removeEventListener('transitionend', handleRightTransition);
+    if (position <= -cardWidth * (cards.length)) {
+      position = -cardWidth * visibleCount;
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${position}px)`;
+      // Force reflow to allow next transition
+      void track.offsetWidth;
+      track.style.transition = 'transform 0.5s ease-in-out';
+    }
   }
 
   function moveLeft() {
@@ -48,13 +54,18 @@ function setupCarousel(carouselId) {
     track.style.transition = 'transform 0.5s ease-in-out';
     track.style.transform = `translateX(${position}px)`;
 
-    setTimeout(() => {
-      if (position >= 0) {
-        position = -cardWidth * (cards.length - visibleCount);
-        track.style.transition = 'none';
-        track.style.transform = `translateX(${position}px)`;
-      }
-    }, 500);
+    track.addEventListener('transitionend', handleLeftTransition);
+  }
+
+  function handleLeftTransition() {
+    track.removeEventListener('transitionend', handleLeftTransition);
+    if (position >= 0) {
+      position = -cardWidth * (cards.length - visibleCount);
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${position}px)`;
+      void track.offsetWidth;
+      track.style.transition = 'transform 0.5s ease-in-out';
+    }
   }
 
   // Auto-scroll every 2 seconds
