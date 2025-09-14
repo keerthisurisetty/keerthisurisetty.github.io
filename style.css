@@ -421,6 +421,125 @@ body {
   }
 }
 
+/* Projects Section Styling */
+.projects-category {
+  margin-bottom: 4rem;
+}
+
+.projects-category h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #4b6cb7;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.project-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: carousel 20s linear infinite;
+  width: fit-content;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+.project-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  min-width: 300px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(26,37,59,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(26,37,59,0.12);
+}
+
+.project-image {
+  height: 160px;
+  background: linear-gradient(45deg, #4b6cb7, #182848);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-icon {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #1a253b;
+  margin: 0 0 0.5rem 0;
+}
+
+.project-tech {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #4b6cb7;
+  margin: 0 0 1rem 0;
+}
+
+.project-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #23395d;
+  line-height: 1.5;
+  margin: 0 0 1.2rem 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #4b6cb7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-link:hover {
+  color: #1a253b;
+}
+
+@media (max-width: 1200px) {
+  .project-card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
 @media (max-width: 900px) {
   .contact-container {
     flex-direction: column;
@@ -428,5 +547,8 @@ body {
   }
   .contact-form {
     align-self: stretch;
+  }
+  .project-card {
+    flex: 0 0 calc(100% - 1rem);
   }
 }
