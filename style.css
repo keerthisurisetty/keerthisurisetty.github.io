@@ -195,7 +195,7 @@ section p {
 .skill-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  background-color: #ffe6eb;
+  background-color: #e6f0ff; /* changed hover pink to light blue */
 }
 
 /* Ensure text doesn't wrap inside skill cards */
@@ -218,7 +218,7 @@ section p {
 
 .project-skills span:hover {
   transform: scale(1.1);
-  background-color: #0056b3;
+  background-color: #003f7f; /* slightly darker blue on hover */
 }
 
 /* Carousel Section for Projects */
@@ -254,7 +254,7 @@ section p {
 }
 
 .project-title {
-  color: #ff6b81;
+  color: #0056b3;
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -280,7 +280,7 @@ section p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #0056b3(255, 107, 129, 0.8);
+  background: rgba(0, 86, 179, 0.8);
   border: none;
   color: #fff;
   font-size: 2rem;
@@ -299,7 +299,7 @@ section p {
 }
 
 .carousel-arrow:hover {
-  background: #0056b3;
+  background: #003f7f;
 }
 
 /* Contact Section */
@@ -376,4 +376,74 @@ section p {
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   }
+}
+
+/* ===== Vertical Timeline CSS ===== */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #0056b3;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 4px solid #0056b3;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+  left: 30px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content h3 {
+  color: #0056b3;
+  margin-bottom: 0.3rem;
+}
+
+.timeline-content p {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.timeline-content ul {
+  margin-left: 1.2rem;
+  color: #333;
+  list-style-type: disc;
+  padding-left: 0.5rem;
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
