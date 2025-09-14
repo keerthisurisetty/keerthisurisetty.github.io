@@ -124,7 +124,7 @@ section p {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2rem 0;
   text-align: left;
   white-space: nowrap; /* Prevent skills from wrapping */
 }
@@ -159,7 +159,8 @@ section p {
 
 /* Skill badges for project tags */
 .project-skills span {
-  display: inline-block;
+  display: block;
+  text-align: left;
   background-color: #0056b3;
   color: #fff;
   padding: 0.3rem 0.7rem;
