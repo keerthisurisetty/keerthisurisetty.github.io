@@ -275,10 +275,15 @@ body {
 }
 
 .social-icon {
-  width: 22px;
-  height: 22px;
+  font-size: 1.25rem;
   margin-right: 0.5rem;
   vertical-align: middle;
+  color: #4b6cb7;
+  transition: color 0.2s;
+}
+
+.contact-social:hover .social-icon {
+  color: #23395d;
 }
 
 .contact-form {
