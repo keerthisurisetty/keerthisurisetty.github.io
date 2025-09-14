@@ -564,8 +564,12 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
   color: #23395d;
-  line-height: 1.5;
   margin: 0 0 1.2rem 0;
+}
+
+.project-description p {
+  margin: 0.4rem 0;
+  line-height: 1.5;
 }
 
 .project-links {
