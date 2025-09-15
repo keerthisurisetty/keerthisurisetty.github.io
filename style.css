@@ -613,6 +613,23 @@ body {
 .timeline-item.right::before {
   left: 12px;
 }
+.timeline-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(26,37,59,0.10);
+  margin-bottom: 0.7rem;
+  display: block;
+}
+.timeline-company {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.08rem;
+  color: #4b6cb7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
 
 /* Optional: add a short connector line from dot to card */
 .timeline-item.left .timeline-content {
