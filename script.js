@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
         let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
         let visibleCount = Math.floor(container.offsetWidth / cardWidth);
 
+        // Ensure gap is at least 16px if not specified
+        const gap = parseInt(getComputedStyle(track).gap || '16');
+        track.style.gap = gap + 'px';
+
         // Clone all cards for seamless infinite scroll
         const clonesBefore = cards.slice(-cards.length).map(card => card.cloneNode(true));
         const clonesAfter = cards.slice(0, cards.length).map(card => card.cloneNode(true));
@@ -87,16 +91,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Manual navigation
         if (rightArrow) {
-            rightArrow.addEventListener('click', () => {
+            rightArrow.addEventListener('click', (e) => {
+                e.preventDefault();
                 clearInterval(interval);
                 moveRight();
+                // Restart auto-scroll after manual navigation
+                interval = setInterval(moveRight, 3000);
             });
         }
         
         if (leftArrow) {
-            leftArrow.addEventListener('click', () => {
+            leftArrow.addEventListener('click', (e) => {
+                e.preventDefault();
                 clearInterval(interval);
                 moveLeft();
+                // Restart auto-scroll after manual navigation
+                interval = setInterval(moveRight, 3000);
             });
         }
 
@@ -104,9 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('resize', () => {
             cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
             visibleCount = Math.floor(container.offsetWidth / cardWidth);
-            position = -cardWidth * visibleCount;
+            position = -cardWidth * cards.length;
             track.style.transition = 'none';
             track.style.transform = `translateX(${position}px)`;
+            void track.offsetWidth; // force reflow
+            track.style.transition = 'transform 0.5s ease-in-out';
         });
     }
 
