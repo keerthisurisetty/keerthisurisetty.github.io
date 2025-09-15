@@ -593,6 +593,57 @@ body {
   color: #7a8ca5;
   margin-bottom: 0.7rem;
 }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border: 4px solid #4b6cb7;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(26,37,59,0.10);
+  z-index: 2;
+}
+.timeline-item.left::before {
+  left: calc(100% - 12px);
+}
+.timeline-item.right::before {
+  left: 12px;
+}
+
+/* Optional: add a short connector line from dot to card */
+.timeline-item.left .timeline-content {
+  position: relative;
+}
+.timeline-item.left .timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  width: 28px;
+  height: 4px;
+  background: #4b6cb7;
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+.timeline-item.right .timeline-content {
+  position: relative;
+}
+.timeline-item.right .timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -40px;
+  width: 28px;
+  height: 4px;
+  background: #4b6cb7;
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+
 @media (max-width: 900px) {
   .timeline:before {
     left: 24px;
@@ -611,6 +662,14 @@ body {
     margin: 0 0 2rem 0;
     min-width: 0;
     max-width: 100%;
+  }
+  .timeline-item::before {
+    left: 24px;
+  }
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before {
+    left: -40px;
+    right: auto;
   }
 }
 
