@@ -26,16 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
         let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
         let visibleCount = Math.floor(container.offsetWidth / cardWidth);
 
-        // Clone first and last few cards for seamless loop
-        const clonesBefore = cards.slice(-visibleCount).map(card => card.cloneNode(true));
-        const clonesAfter = cards.slice(0, visibleCount).map(card => card.cloneNode(true));
+        // Clone all cards for seamless infinite scroll
+        const clonesBefore = cards.slice(-cards.length).map(card => card.cloneNode(true));
+        const clonesAfter = cards.slice(0, cards.length).map(card => card.cloneNode(true));
 
+        // Add clones to the track
         clonesBefore.forEach(clone => track.insertBefore(clone, track.firstChild));
         clonesAfter.forEach(clone => track.appendChild(clone));
 
-        // Initial position
-        position = -cardWidth * visibleCount;
+        // Initial position (start at the first set of original cards)
+        position = -cardWidth * cards.length;
         track.style.transform = `translateX(${position}px)`;
+        track.style.transition = 'none';
+        requestAnimationFrame(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        });
 
         function moveRight() {
             position -= cardWidth;
@@ -46,8 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function handleRightTransition() {
             track.removeEventListener('transitionend', handleRightTransition);
-            if (position <= -cardWidth * (cards.length + visibleCount)) {
-                position = -cardWidth * visibleCount;
+            if (position <= -cardWidth * (cards.length * 2)) {
+                position = -cardWidth * cards.length;
                 track.style.transition = 'none';
                 track.style.transform = `translateX(${position}px)`;
                 void track.offsetWidth; // force reflow

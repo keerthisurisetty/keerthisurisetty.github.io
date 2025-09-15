@@ -453,7 +453,7 @@ body {
   padding: 1rem 0;
 }
 
-.carousel-nav {
+.carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -473,38 +473,27 @@ body {
   transition: all 0.3s ease;
 }
 
-.carousel-nav:hover {
+.carousel-arrow:hover {
   background: #4b6cb7;
   color: #fff;
   box-shadow: 0 4px 12px rgba(26,37,59,0.2);
 }
 
-.prev-btn {
+.carousel-arrow.left {
   left: -20px;
 }
 
-.next-btn {
+.carousel-arrow.right {
   right: -20px;
 }
 
 .carousel-track {
   display: flex;
   gap: 1.5rem;
-  animation: carousel 20s linear infinite;
   width: fit-content;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes carousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50%));
-  }
+  position: relative;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
 }
 
 .project-card {
