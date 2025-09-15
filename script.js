@@ -82,31 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Auto-scroll every 3 seconds
-        let interval = setInterval(moveRight, 3000);
-
-        // Pause on hover
-        container.addEventListener('mouseenter', () => clearInterval(interval));
-        container.addEventListener('mouseleave', () => interval = setInterval(moveRight, 3000));
-
         // Manual navigation
         if (rightArrow) {
             rightArrow.addEventListener('click', (e) => {
                 e.preventDefault();
-                clearInterval(interval);
                 moveRight();
-                // Restart auto-scroll after manual navigation
-                interval = setInterval(moveRight, 3000);
             });
         }
         
         if (leftArrow) {
             leftArrow.addEventListener('click', (e) => {
                 e.preventDefault();
-                clearInterval(interval);
                 moveLeft();
-                // Restart auto-scroll after manual navigation
-                interval = setInterval(moveRight, 3000);
             });
         }
 

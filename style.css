@@ -450,8 +450,8 @@ body {
 
 .project-carousel {
   position: relative;
-  overflow: hidden;
-  padding: 1rem 3rem;
+  overflow: visible;
+  padding: 1rem 4rem;
   width: 100%;
   max-width: 100%;
 }
@@ -483,11 +483,11 @@ body {
 }
 
 .carousel-arrow.left {
-  left: -50px;
+  left: -70px;
 }
 
 .carousel-arrow.right {
-  right: -50px;
+  right: -70px;
 }
 
 .carousel-track {
@@ -497,7 +497,7 @@ body {
   position: relative;
   transform: translateX(0);
   transition: transform 0.5s ease-in-out;
-  margin: 0 1rem;
+  margin: 0 2rem;
 }
 
 .project-card {
