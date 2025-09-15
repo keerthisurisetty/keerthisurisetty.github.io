@@ -453,7 +453,7 @@ body {
 }
 
 .project-card {
-  flex: 0 0 400px;   /* fixed width */
+  flex: 0 0 400px;
   min-width: 400px;
   background: #fff;
   border-radius: 16px;
