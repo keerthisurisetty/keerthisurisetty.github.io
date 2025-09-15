@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const rightArrow = container.querySelector('.carousel-arrow.right');
         
         let position = 0;
-        // Ensure gap is at least 24px if not specified
-        const gap = parseInt(getComputedStyle(track).gap || '24');
+        let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
+        let visibleCount = Math.floor(container.offsetWidth / cardWidth);
+
+        // Ensure gap is at least 16px if not specified
+        const gap = parseInt(getComputedStyle(track).gap || '16');
         track.style.gap = gap + 'px';
-        
-        let cardWidth = cards[0].offsetWidth + gap;
-        let visibleCount = Math.floor((container.offsetWidth - gap * 2) / cardWidth);
 
         // Clone all cards for seamless infinite scroll
         const clonesBefore = cards.slice(-cards.length).map(card => card.cloneNode(true));
@@ -82,18 +82,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        // Auto-scroll every 3 seconds
+        let interval = setInterval(moveRight, 3000);
+
+        // Pause on hover
+        container.addEventListener('mouseenter', () => clearInterval(interval));
+        container.addEventListener('mouseleave', () => interval = setInterval(moveRight, 3000));
+
         // Manual navigation
         if (rightArrow) {
             rightArrow.addEventListener('click', (e) => {
                 e.preventDefault();
+                clearInterval(interval);
                 moveRight();
+                // Restart auto-scroll after manual navigation
+                interval = setInterval(moveRight, 3000);
             });
         }
         
         if (leftArrow) {
             leftArrow.addEventListener('click', (e) => {
                 e.preventDefault();
+                clearInterval(interval);
                 moveLeft();
+                // Restart auto-scroll after manual navigation
+                interval = setInterval(moveRight, 3000);
             });
         }
 
