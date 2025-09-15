@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const rightArrow = container.querySelector('.carousel-arrow.right');
         
         let position = 0;
-        let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
-        let visibleCount = Math.floor(container.offsetWidth / cardWidth);
-
-        // Ensure gap is at least 16px if not specified
-        const gap = parseInt(getComputedStyle(track).gap || '16');
+        // Ensure gap is at least 24px if not specified
+        const gap = parseInt(getComputedStyle(track).gap || '24');
         track.style.gap = gap + 'px';
+        
+        let cardWidth = cards[0].offsetWidth + gap;
+        let visibleCount = Math.floor((container.offsetWidth - gap * 2) / cardWidth);
 
         // Clone all cards for seamless infinite scroll
         const clonesBefore = cards.slice(-cards.length).map(card => card.cloneNode(true));
