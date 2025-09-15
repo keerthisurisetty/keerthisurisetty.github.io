@@ -13,7 +13,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 2.1rem;
   color: #1a253b;
-  margin-bottom: 1.2rem;
+  margin: 0.5rem 0 1.2rem 0;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -130,15 +130,6 @@ body {
   text-align: left;
 }
 
-.about-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.1rem;
-  color: #1a253b;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
 .about-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.13rem;
@@ -160,15 +151,6 @@ body {
   background: #fff;
 }
 
-.education-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.1rem;
-  color: #1a253b;
-  margin-bottom: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
 .edu-cards {
   display: flex;
   flex-direction: column;
@@ -187,7 +169,7 @@ body {
 }
 
 .edu-logo {
-  width: 70x;
+  width: 70px; 
   height: 70px;
   object-fit: contain;
   border-radius: 8px;
@@ -233,15 +215,6 @@ body {
 .contact-info {
   flex: 1 1 320px;
   min-width: 280px;
-}
-
-.contact-info h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.1rem;
-  color: #1a253b;
-  margin-bottom: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 1px;
 }
 
 .contact-message {
@@ -333,17 +306,19 @@ body {
   margin-bottom: 0.2rem;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #4b6cb7;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(75, 108, 183, 0.2);
 }
 
+/* Send button - Blue theme */
 .send-btn {
-  background: #a97c5d;
+  background: #4b6cb7;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -357,7 +332,7 @@ body {
 }
 
 .send-btn:hover {
-  background: #7c5a3a;
+  background: #23395d;
 }
 
 .skills-section {
@@ -412,27 +387,6 @@ body {
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .nav-links ul {
-    flex-direction: column;
-    gap: 1.1rem;
-    align-items: flex-end;
-  }
-  .logo-circle {
-    margin-bottom: 1rem;
-  }
-  .skills-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  .skills-category {
-    padding: 1.5rem;
-  }
-}
-
 /* Projects Section Styling */
 .projects-category {
   margin-bottom: 4rem;
@@ -453,7 +407,6 @@ body {
   overflow: hidden;
   padding: 1rem 0;
   width: 100%;
-  max-width: 100%;
 }
 
 .carousel-arrow {
@@ -500,8 +453,8 @@ body {
 }
 
 .project-card {
-  flex: 0 0 calc(33.333% - 1rem);
-  min-width: 300px;
+  flex: 0 0 350px;   /* fixed width */
+  min-width: 350px;
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
@@ -529,6 +482,8 @@ body {
 
 .project-content {
   padding: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .project-content h4 {
@@ -584,21 +539,39 @@ body {
   color: #1a253b;
 }
 
-@media (max-width: 1200px) {
+/* Responsive Adjustments */
+@media (max-width: 1200px),
+(max-width: 900px) {
   .project-card {
-    flex: 0 0 calc(50% - 1rem);
+    flex: 0 0 350px;
+    min-width: 350px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: flex-end;
+  }
+  .logo-circle {
+    margin-bottom: 1rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .skills-category {
+    padding: 1.5rem;
+  }
   .contact-container {
     flex-direction: column;
     gap: 2rem;
   }
   .contact-form {
     align-self: stretch;
-  }
-  .project-card {
-    flex: 0 0 calc(100% - 1rem);
   }
 }
