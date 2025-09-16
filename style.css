@@ -749,3 +749,7 @@ body {
   margin-bottom: 0.3rem;
   list-style: disc inside;
 }
+
+.timeline-item.left.gwc .timeline-content {
+  min-height: 220px;
+}
