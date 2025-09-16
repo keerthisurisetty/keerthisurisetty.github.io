@@ -8,10 +8,14 @@
 
 .hobbies-row {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 1.2rem;
+  gap: 2.2rem;
+}
+
+.hobbies-wrap {
+  width: 100%;
 }
 
 .dot {
