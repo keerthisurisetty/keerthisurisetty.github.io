@@ -1,3 +1,85 @@
+/* Hobbies seamless scroll and animation */
+.hobbies-scroll-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 3.2em;
+}
+
+.hobbies-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.1rem;
+  animation: hobbies-scroll 18s linear infinite;
+}
+
+@keyframes hobbies-scroll {
+  0% {
+    transform: translateX(0);
+    opacity: 0.2;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%);
+    opacity: 0.2;
+  }
+}
+
+.hobby {
+  display: flex;
+  align-items: center;
+  font-size: 1.15em;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: hobby-pop 1.2s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
+}
+
+.hobby i {
+  margin-right: 0.3em;
+  color: #4b6cb7;
+  font-size: 1.2em;
+}
+
+.dot {
+  color: #2d3a5a;
+  font-size: 1.1em;
+  margin: 0 0.25em;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+@keyframes hobby-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 /* Hobbies Flex Layout */
 .hobbies-flex {
   display: flex;
