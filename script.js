@@ -43,7 +43,33 @@ document.addEventListener('DOMContentLoaded', function() {
         track.style.transform = `translateX(${position}px)`;
         track.style.transition = 'none';
         requestAnimationFrame(() => {
-            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transition = 'none';
+        });
+
+        // Seamless continuous auto-scroll
+        let lastTimestamp = null;
+        let autoScrollSpeed = 0.5; // px per frame (adjust for speed)
+        let isPaused = false;
+
+        function seamlessScroll(timestamp) {
+            if (isPaused) return;
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            position -= autoScrollSpeed;
+            track.style.transform = `translateX(${position}px)`;
+            // Loop seamlessly
+            if (position <= -cardWidth * (cards.length * 2)) {
+                position = -cardWidth * cards.length;
+                track.style.transform = `translateX(${position}px)`;
+            }
+            requestAnimationFrame(seamlessScroll);
+        }
+        requestAnimationFrame(seamlessScroll);
+
+        // Pause on hover
+        container.addEventListener('mouseenter', () => { isPaused = true; });
+        container.addEventListener('mouseleave', () => {
+            isPaused = false;
+            requestAnimationFrame(seamlessScroll);
         });
 
         function moveRight() {
@@ -93,20 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (rightArrow) {
             rightArrow.addEventListener('click', (e) => {
                 e.preventDefault();
-                clearInterval(interval);
+                isPaused = true;
                 moveRight();
-                // Restart auto-scroll after manual navigation
-                interval = setInterval(moveRight, 3000);
+                setTimeout(() => {
+                    isPaused = false;
+                    requestAnimationFrame(seamlessScroll);
+                }, 600);
             });
         }
-        
         if (leftArrow) {
             leftArrow.addEventListener('click', (e) => {
                 e.preventDefault();
-                clearInterval(interval);
+                isPaused = true;
                 moveLeft();
-                // Restart auto-scroll after manual navigation
-                interval = setInterval(moveRight, 3000);
+                setTimeout(() => {
+                    isPaused = false;
+                    requestAnimationFrame(seamlessScroll);
+                }, 600);
             });
         }
 
@@ -117,8 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
             position = -cardWidth * cards.length;
             track.style.transition = 'none';
             track.style.transform = `translateX(${position}px)`;
-            void track.offsetWidth; // force reflow
-            track.style.transition = 'transform 0.5s ease-in-out';
         });
     }
 
