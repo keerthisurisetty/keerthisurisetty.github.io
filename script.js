@@ -1,4 +1,54 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Seamless horizontal scrolling for timeline
+    function setupTimelineScroll(trackId) {
+        const track = document.getElementById(trackId);
+        if (!track) return;
+        const items = Array.from(track.children);
+        if (!items.length) return;
+
+        // Set timeline to horizontal flex
+        track.style.display = 'flex';
+        track.style.flexDirection = 'row';
+        track.style.gap = '32px';
+        track.style.transition = 'none';
+
+        // Clone items for seamless scroll
+        const clonesBefore = items.map(item => item.cloneNode(true));
+        const clonesAfter = items.map(item => item.cloneNode(true));
+        clonesBefore.forEach(clone => track.insertBefore(clone, track.firstChild));
+        clonesAfter.forEach(clone => track.appendChild(clone));
+
+        // Calculate item width (assume all same)
+        const itemWidth = items[0].offsetWidth + 32; // gap
+        let position = -itemWidth * items.length;
+        track.style.transform = `translateX(${position}px)`;
+
+        let lastTimestamp = null;
+        let autoScrollSpeed = 0.7; // px per frame
+        let isPaused = false;
+
+        function seamlessScroll(timestamp) {
+            if (isPaused) return;
+            if (!lastTimestamp) lastTimestamp = timestamp;
+            position -= autoScrollSpeed;
+            track.style.transform = `translateX(${position}px)`;
+            // Loop seamlessly
+            if (position <= -itemWidth * (items.length * 2)) {
+                position = -itemWidth * items.length;
+                track.style.transform = `translateX(${position}px)`;
+            }
+            requestAnimationFrame(seamlessScroll);
+        }
+        requestAnimationFrame(seamlessScroll);
+
+        // Pause on hover
+        track.addEventListener('mouseenter', () => { isPaused = true; });
+        track.addEventListener('mouseleave', () => {
+            isPaused = false;
+            requestAnimationFrame(seamlessScroll);
+        });
+    }
+
     // Toggle mobile menu
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
@@ -21,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const leftArrow = container.querySelector('.carousel-arrow.left');
         const rightArrow = container.querySelector('.carousel-arrow.right');
-        
+
         let position = 0;
         let cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(track).gap || '0');
         let visibleCount = Math.floor(container.offsetWidth / cardWidth);
@@ -152,4 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize carousels
     setupCarousel('featured-carousel');
     setupCarousel('other-carousel');
+
+    // Initialize timeline seamless scroll
+    setupTimelineScroll('timeline-scroll-track');
 });
