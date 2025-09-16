@@ -753,3 +753,15 @@ body {
 .timeline-item.left.gwc .timeline-content {
   min-height: 220px;
 }
+
+.hobby {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-right: 1em;
+  font-size: 1.08rem;
+}
+.hobby i {
+  color: #4b6cb7;
+  font-size: 1.15em;
+}
