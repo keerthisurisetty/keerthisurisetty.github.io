@@ -582,10 +582,18 @@ body {
   max-width: 400px;
 }
 .timeline-item.left .timeline-content {
-  margin-right: 40px;
+  margin-right: 4px;
+}
+.timeline-item.left .timeline-content::before {
+  right: -10px;
+  width: 8px;
 }
 .timeline-item.right .timeline-content {
-  margin-left: 40px;
+  margin-left: 16px;
+}
+.timeline-item.right .timeline-content::before {
+  left: -24px;
+  width: 14px;
 }
 .timeline-date {
   display: block;
