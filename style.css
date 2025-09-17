@@ -19,8 +19,8 @@
 }
 
 .about-img {
-  width: 160px;
-  height: 160px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(30, 40, 60, 0.10);
