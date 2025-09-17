@@ -36,10 +36,11 @@
 
 .hobbies-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.7rem;
+  overflow-x: auto;
 }
 
 .hobbies-wrap {
@@ -281,8 +282,27 @@ body {
 .contact-container {
   display: flex;
   gap: 3rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+/* Contact image always to the right, matches contact-info height */
+.contact-img-container {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  height: 100%;
+}
+
+.contact-img-container .about-img {
+  height: 100%;
+  width: auto;
+  max-height: 420px;
+  min-height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30, 40, 60, 0.10);
 }
 
 .contact-info {
