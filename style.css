@@ -298,8 +298,8 @@ body {
 .contact-img-container .about-img {
   height: 100%;
   width: auto;
-  max-height: 300px;
-  min-height: 180px;
+  max-height: 200px;
+  min-height: 200px;
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(30, 40, 60, 0.10);
