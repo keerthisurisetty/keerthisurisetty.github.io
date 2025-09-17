@@ -1,3 +1,31 @@
+/* About section flex layout for text and pictures */
+.about-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.about-main {
+  flex: 2;
+}
+
+.about-pictures {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.about-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(30, 40, 60, 0.10);
+}
+
 /* Hobbies Flex Layout */
 .hobbies-flex {
   display: flex;
