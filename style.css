@@ -4,12 +4,10 @@
   transform: translateY(40px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .fade-section.visible {
   opacity: 1;
   transform: none;
 }
-
 /* About section flex layout for text and pictures */
 .about-flex {
   display: flex;
@@ -36,6 +34,12 @@
   object-fit: cover;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(30, 40, 60, 0.10);
+}
+
+
+.experience-section {
+  padding: 4rem 0 3rem 0;
+  text-align: left;
 }
 
 /* Hobbies Flex Layout */
@@ -864,8 +868,7 @@ body {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1200px),
-(max-width: 900px) {
+@media (max-width: 1200px) {
   .project-card {
     flex: 0 0 350px;
     min-width: 350px;
