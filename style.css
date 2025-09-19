@@ -938,3 +938,26 @@ body {
   color: #4b6cb7;
   font-size: 1.15em;
 }
+
+/* Photo Gallery Styles */
+.photo-gallery {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(26, 37, 59, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(26, 37, 59, 0.15);
+}
